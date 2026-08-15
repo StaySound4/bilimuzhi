@@ -1,0 +1,1199 @@
+.muzhi-archive {
+  position: relative;
+  color: var(--muzhi-text);
+}
+
+.muzhi-archive > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.muzhi-archive h2 {
+  margin: 0;
+}
+
+.muzhi-archive ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.muzhi-archive [role="group"] {
+  display: grid;
+  gap: 7px;
+  padding: 7px 0 0 18px;
+}
+
+.muzhi-archive [role="tree"] > [role="treeitem"] {
+  padding: 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-archive__session {
+  padding: 7px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-archive__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+}
+
+.muzhi-archive__row
+  > span:not(.muzhi-archive__pin-status):not(.muzhi-archive__status) {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  color: var(--muzhi-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-archive__archived-at {
+  flex: 0 1 auto;
+  max-width: 30%;
+  overflow: hidden;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-archive__status {
+  /* 归档时间与状态槽同行（自动 · 官方字幕 · 归档于 …），
+     不限制宽度以免截断；窄宽时由容器省略。 */
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-archive__pin-status {
+  flex: 0 0 auto;
+}
+
+.muzhi-archive button {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  font: inherit;
+  white-space: nowrap;
+}
+
+.muzhi-archive button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-archive button:disabled {
+  color: var(--muzhi-muted);
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.muzhi-archive__row > button:first-child {
+  width: 34px;
+  padding: 0;
+}
+
+.muzhi-archive__expand svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 160ms ease;
+  transform: rotate(-90deg);
+}
+
+.muzhi-archive__expand svg.is-expanded {
+  transform: rotate(0deg);
+}
+
+.muzhi-archive__session.is-pinned {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-accent) 48%,
+    var(--muzhi-border)
+  );
+  box-shadow: inset 3px 0 0 var(--muzhi-accent);
+}
+
+.muzhi-archive__pin-status {
+  flex: 0 0 auto;
+  padding: 3px 6px;
+  border-radius: 999px;
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.muzhi-archive__menu {
+  display: grid;
+  gap: 5px;
+  padding: 0 12px 12px 38px;
+  border-top: 1px solid var(--muzhi-border);
+}
+
+.muzhi-archive__menu p {
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.muzhi-archive__menu > p:first-child {
+  margin-top: 10px;
+}
+
+.muzhi-archive__menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.muzhi-archive__menu-head strong {
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.muzhi-archive__menu-head button {
+  min-height: 24px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  background: var(--muzhi-panel);
+  color: var(--muzhi-text);
+  cursor: pointer;
+  font-size: 0.74rem;
+}
+
+.muzhi-archive__menu .muzhi-archive__tag-options {
+  margin: 8px 0 0;
+  max-height: 168px;
+  gap: 6px;
+}
+
+.muzhi-archive__menu .muzhi-archive__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.muzhi-archive__menu .muzhi-archive__actions button {
+  justify-content: center;
+  min-height: 30px;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+/* 筛选面板：标题 + 提示 + 新建行 + 行内编辑（对齐回收站信息密度） */
+.muzhi-archive__filter-title {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.muzhi-archive__filter-hint {
+  margin: 3px 0 0;
+  color: var(--muzhi-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.muzhi-archive__filter-new {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.muzhi-archive__filter-new input {
+  min-width: 0;
+  flex: 1 1 auto;
+  height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-surface);
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.muzhi-archive__filter-new input:focus {
+  border-color: var(--muzhi-accent);
+}
+
+.muzhi-archive__filter-row {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4px;
+  padding: 2px 0;
+}
+
+.muzhi-archive__filter-chip {
+  /* 统一标签 chip：与卡片详情/编辑对话框一致的紧凑尺寸 */
+  padding: 2px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-surface);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.muzhi-archive__filter-chip.is-selected {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-archive__filter-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 100%;
+  margin-top: 2px;
+  padding: 6px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-surface);
+  font-size: 0.76rem;
+}
+
+.muzhi-archive__filter-inline input {
+  min-width: 0;
+  flex: 1 1 140px;
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-surface);
+  font-size: 0.76rem;
+  outline: none;
+}
+
+.muzhi-archive__filter-inline input:focus {
+  border-color: var(--muzhi-accent);
+}
+
+.muzhi-archive__filter-inline button {
+  height: 24px;
+  padding: 0 9px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.muzhi-archive__filter-inline.is-confirm {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-danger) 45%,
+    var(--muzhi-border)
+  );
+}
+
+.muzhi-archive__filter-inline.is-confirm > span {
+  flex: 1 1 100%;
+  color: var(--muzhi-text);
+}
+
+.muzhi-archive__branch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 7px;
+  border-radius: 7px;
+  color: var(--muzhi-muted);
+}
+
+.muzhi-archive__branch:hover {
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-archive__branch span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-archive button:focus-visible,
+.muzhi-archive input:focus-visible {
+  outline: 3px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 620px) {
+  .muzhi-archive > header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+.muzhi-archive__group {
+  display: grid;
+  gap: 7px;
+}
+
+.muzhi-archive__group-label {
+  margin: 4px 0 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.muzhi-archive__session {
+  cursor: grab;
+}
+
+.muzhi-archive__session.is-dragging {
+  opacity: 0.72;
+}
+
+.muzhi-archive__session.is-pinned {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-accent) 45%,
+    var(--muzhi-border)
+  );
+}
+
+.muzhi-archive__modal-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: color-mix(in srgb, #000 36%, transparent);
+}
+
+.muzhi-archive__dialog {
+  width: min(100%, 360px);
+  padding: 18px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 14px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  box-shadow: 0 18px 48px color-mix(in srgb, #000 28%, transparent);
+}
+
+.muzhi-archive__dialog h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.muzhi-archive__dialog p {
+  margin: 0 0 14px;
+  color: var(--muzhi-muted);
+  line-height: 1.45;
+}
+
+.muzhi-archive__field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+  color: var(--muzhi-muted);
+  font-size: 13px;
+}
+
+.muzhi-archive__field input,
+.muzhi-archive__field select {
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+  font: inherit;
+}
+
+.muzhi-archive__dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.muzhi-archive__dialog-actions button {
+  min-height: 36px;
+  padding: 0 14px;
+}
+
+.muzhi-archive__dialog-actions .is-danger {
+  border-color: color-mix(in srgb, #ef4444 55%, var(--muzhi-border));
+  color: #fecaca;
+  background: color-mix(in srgb, #ef4444 18%, var(--muzhi-panel));
+}
+
+.muzhi-archive__header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* In selection mode the whole title is the hit target, not just the box. */
+.muzhi-archive__row-title {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 6px;
+  border: 0;
+  border-radius: 6px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent;
+  cursor: pointer;
+}
+
+.muzhi-archive__row-title:hover {
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-archive__row-title:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: -2px;
+}
+
+.muzhi-archive__row.is-selectable {
+  border-radius: 8px;
+}
+
+.muzhi-archive__danger-action {
+  border-color: var(--muzhi-danger);
+  color: var(--muzhi-danger);
+}
+
+/* 8a 标签系统：扁平会话列表 */
+.muzhi-archive__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.muzhi-archive__session {
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-archive__session.is-selected {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-archive__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 10px;
+}
+
+.muzhi-archive__row-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muzhi-text);
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-archive__row-title:hover {
+  color: var(--muzhi-accent-strong);
+}
+
+.muzhi-archive__search {
+  min-width: 120px;
+  padding: 6px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+  color: var(--muzhi-text);
+  font: inherit;
+}
+
+.muzhi-archive__selected-count {
+  color: var(--muzhi-muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.muzhi-archive__tag-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 220px;
+  margin: 8px 0;
+  overflow-y: auto;
+}
+
+.muzhi-archive__tag-option {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.muzhi-archive__new-tag {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.muzhi-archive__primary-action {
+  border-color: var(--muzhi-accent) !important;
+  background: var(--muzhi-accent) !important;
+  color: var(--muzhi-on-accent) !important;
+}
+
+.muzhi-archive__danger-action {
+  border-color: var(--muzhi-danger, #e5534b) !important;
+  color: var(--muzhi-danger, #e5534b) !important;
+}
+
+.muzhi-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 420px;
+  margin: 16px auto;
+  padding: 16px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 20%);
+}
+
+.muzhi-dialog h3 {
+  margin: 0;
+  color: var(--muzhi-text);
+  font-size: 16px;
+}
+
+.muzhi-dialog p {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 13px;
+}
+
+.muzhi-dialog input {
+  padding: 6px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+  color: var(--muzhi-text);
+  font: inherit;
+}
+
+.muzhi-dialog__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.muzhi-dialog__hint {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+/* ===== 归档区（对齐回收站设计系统） ===== */
+.muzhi-archive {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.muzhi-archive > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.muzhi-archive > header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.muzhi-archive__subtitle {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 0.8rem;
+}
+
+.muzhi-archive__usage {
+  color: var(--muzhi-muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.muzhi-archive__header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.muzhi-archive__search {
+  min-width: 120px;
+  min-height: 32px;
+  flex: 1 1 auto;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.muzhi-archive__selected-count {
+  color: var(--muzhi-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* 常驻标签面板：垂直布局（新建行 + chips 区），标签多时内部滚动 */
+.muzhi-archive__filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  margin: 8px 0 4px;
+  padding: 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-archive__filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.muzhi-archive__filter-tags
+  > .muzhi-archive__filter-row
+  > .muzhi-archive__filter-chip {
+  min-height: 30px;
+  padding: 4px 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 999px;
+  background: var(--muzhi-panel);
+  color: var(--muzhi-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.muzhi-archive__filter-tags
+  > .muzhi-archive__filter-row
+  > .muzhi-archive__filter-chip.is-selected {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-accent-soft);
+  color: var(--muzhi-accent-strong);
+}
+
+.muzhi-archive__filter-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+  color: var(--muzhi-muted);
+  font-size: 0.8rem;
+}
+
+.muzhi-archive__filter-empty {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 0.8rem;
+}
+
+.muzhi-archive__empty {
+  padding: 24px;
+  border: 1px dashed var(--muzhi-border);
+  border-radius: 12px;
+  color: var(--muzhi-muted);
+  text-align: center;
+}
+
+/* 管理标签面板：标签列表（单选）+ 底部常驻按钮组 */
+.muzhi-archive__manager {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px 0 4px;
+  padding: 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-archive__manager-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.muzhi-archive__manager-head h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.muzhi-archive__manager-hint {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
+.muzhi-archive__manager-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 4px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  background: var(--muzhi-surface);
+}
+
+.muzhi-archive__manager-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+
+.muzhi-archive__manager-row:hover {
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-archive__manager-row.is-managed {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-archive__manager-row.is-drag-over {
+  border-top: 2px solid var(--muzhi-accent);
+  border-radius: 4px;
+}
+
+.muzhi-archive__manager-list.is-drag-to-end {
+  border-bottom: 2px solid var(--muzhi-accent);
+}
+
+.muzhi-archive__manager-drag {
+  flex: 0 0 auto;
+  color: var(--muzhi-muted);
+  cursor: grab;
+  font-size: 0.9rem;
+  letter-spacing: -2px;
+}
+
+.muzhi-archive__manager-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-archive__manager-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.muzhi-archive__manager-actions button {
+  height: 30px;
+  padding: 0 14px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.muzhi-archive__manager-actions button:disabled {
+  color: var(--muzhi-muted);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 会话卡片：与回收站同款 */
+.muzhi-archive__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.muzhi-archive__session {
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel);
+  overflow: hidden;
+}
+
+.muzhi-archive__session.is-selected {
+  border-color: var(--muzhi-accent);
+}
+
+.muzhi-archive__session.is-menu-open {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-accent) 58%,
+    var(--muzhi-border)
+  );
+}
+
+.muzhi-archive__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px 34px;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 5px 7px 5px 11px;
+}
+
+.muzhi-archive.is-selecting .muzhi-archive__row {
+  grid-template-columns: 24px minmax(0, 1fr) 34px 34px;
+}
+
+.muzhi-archive__row > input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--muzhi-accent);
+}
+
+.muzhi-archive__identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.muzhi-archive__row-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muzhi-text);
+  font-size: 0.9rem;
+  font-weight: 620;
+  cursor: pointer;
+}
+
+.muzhi-archive__row-title:hover {
+  color: var(--muzhi-accent-strong);
+}
+
+.muzhi-archive__archived-at {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--muzhi-muted);
+  font-size: 0.78rem;
+}
+
+.muzhi-archive__status {
+  overflow-wrap: anywhere;
+  color: var(--muzhi-muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.muzhi-archive__row > button {
+  width: 32px;
+  min-height: 32px;
+  padding: 0;
+  color: var(--muzhi-muted);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.muzhi-archive__row > button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 展开详情面板（三点菜单）：与回收站同款 */
+.muzhi-archive__menu {
+  display: grid;
+  gap: 5px;
+  padding: 0 12px 12px 38px;
+  border-top: 1px solid var(--muzhi-border);
+}
+
+.muzhi-archive__menu p {
+  overflow-wrap: anywhere;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.muzhi-archive__menu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.muzhi-archive__menu-tag {
+  padding: 2px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-muted);
+  background: var(--muzhi-surface);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.muzhi-archive__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.muzhi-archive__actions button {
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+  color: var(--muzhi-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.muzhi-archive__actions button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+}
+
+.muzhi-archive__danger-action {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-danger) 50%,
+    var(--muzhi-border)
+  ) !important;
+  color: var(--muzhi-danger) !important;
+}
+
+.muzhi-archive__primary-action {
+  border-color: var(--muzhi-accent) !important;
+  background: var(--muzhi-accent) !important;
+  color: var(--muzhi-on-accent) !important;
+}
+
+/* 编辑标签对话框 */
+.muzhi-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 440px;
+  margin: 16px auto;
+  padding: 16px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 20%);
+}
+
+.muzhi-dialog h3 {
+  margin: 0;
+  color: var(--muzhi-text);
+  font-size: 1rem;
+}
+
+.muzhi-dialog p {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 0.8rem;
+}
+
+.muzhi-dialog input {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.muzhi-dialog__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.muzhi-dialog__actions button {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+  color: var(--muzhi-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.muzhi-archive__tag-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 220px;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.muzhi-archive__tag-option {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 2px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* 选中整卡底纹（对齐会话模式/批量模式/备份系统选中态） */
+.muzhi-archive__tag-option:has(input:checked) {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-archive__new-tag {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.muzhi-archive__new-tag input {
+  flex: 1;
+}
+
+@media (max-width: 620px) {
+  .muzhi-archive > header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .muzhi-archive__header-actions {
+    margin-left: 0;
+  }
+}
+
+/* Ticket 12：标签管理为二级 modal surface，不再挤占归档主列表高度。 */
+.muzhi-archive__manager-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgb(13 21 32 / 45%);
+}
+.muzhi-archive__manager-layer > .muzhi-archive__manager {
+  width: min(420px, 100%);
+  max-height: min(620px, calc(100vh - 40px));
+  overflow: auto;
+  margin: 0;
+  border-color: var(--muzhi-border-strong);
+  box-shadow: 0 18px 48px rgb(0 0 0 / 24%);
+}
+.muzhi-archive__list {
+  gap: 2px;
+}
+.muzhi-archive__session {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+/* 行内按钮（行主体/行操作/菜单触发器）保持透明无边框，
+   避免被 .muzhi-archive button 全按钮规则套成嵌套卡片。 */
+.muzhi-archive .muzhi-lifecycle__row button {
+  min-height: 0;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.muzhi-archive .muzhi-lifecycle__row button:hover:not(:disabled) {
+  border-color: transparent;
+  background: var(--muzhi-accent-soft);
+}

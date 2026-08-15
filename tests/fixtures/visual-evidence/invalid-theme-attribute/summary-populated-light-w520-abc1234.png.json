@@ -1,0 +1,28 @@
+{
+  "file": "summary-populated-light-w520-abc1234.png",
+  "sha256": "550d33b2483afb839ec2d0079dc0428654c62f90dbefa0fe8cb8a8327f4e2a85",
+  "commit": "abc1234",
+  "surface": "summary",
+  "state": "populated",
+  "theme": "light",
+  "viewport": "520x900",
+  "deviceScaleFactor": 1,
+  "scenarioId": "summary-populated",
+  "activeTab": "summary",
+  "interactionStep": 0,
+  "themeAttribute": {
+    "name": "data-theme",
+    "value": "dark"
+  },
+  "computedStyles": {
+    "canvas": "#f6f8fb",
+    "background": "#ffffff",
+    "text": "#172033",
+    "accent": "#1769e8"
+  },
+  "scenarioCounts": {
+    "paragraphs": 3
+  },
+  "url": "chrome-extension://abcdefghijklmnopqrstuvwxyzabcdef/sidepanel.html?scenario=summary-populated",
+  "capturedAt": "2026-08-11T10:00:00.000Z"
+}

@@ -1,0 +1,48 @@
+/* 模型配置表单（secondary inspector 内）：配置/模型/推理强度三列，窄宽下收缩。 */
+.muzhi-task-model {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+  width: 100%;
+}
+
+.muzhi-task-model label {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-task-model select {
+  min-width: 0;
+  width: 100%;
+  min-height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  font: inherit;
+}
+
+.muzhi-task-model p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.muzhi-task-model p[role="alert"] {
+  color: var(--muzhi-danger);
+}
+
+.muzhi-task-model p[role="status"] {
+  color: var(--muzhi-muted);
+}
+
+@media (max-width: 620px) {
+  .muzhi-task-model {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

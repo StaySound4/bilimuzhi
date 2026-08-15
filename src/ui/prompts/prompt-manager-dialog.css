@@ -1,0 +1,304 @@
+.muzhi-prompt-manager-layer {
+  position: fixed;
+  z-index: 110;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.muzhi-prompt-manager-layer__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgb(4 10 20 / 58%);
+  cursor: pointer;
+}
+
+.muzhi-prompt-manager {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  width: min(100%, 620px);
+  max-height: min(760px, calc(100vh - 36px));
+  overflow-y: auto;
+  padding: 20px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 18px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  box-shadow: 0 30px 80px rgb(0 0 0 / 42%);
+}
+
+.muzhi-prompt-manager__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.muzhi-prompt-manager__header p,
+.muzhi-prompt-manager__header h2,
+.muzhi-prompt-manager__description,
+.muzhi-prompt-manager__default {
+  margin: 0;
+}
+
+.muzhi-prompt-manager__header p {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+.muzhi-prompt-manager__header h2 {
+  margin-top: 3px;
+  font-size: 19px;
+}
+
+.muzhi-prompt-manager__description,
+.muzhi-prompt-manager__default {
+  color: var(--muzhi-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.muzhi-prompt-manager__field,
+.muzhi-prompt-manager__editor,
+.muzhi-prompt-manager__locked-editor {
+  display: grid;
+  gap: 6px;
+}
+
+.muzhi-prompt-manager__field > span {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.muzhi-prompt-manager input,
+.muzhi-prompt-manager select,
+.muzhi-prompt-manager textarea {
+  width: 100%;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  color: var(--muzhi-text);
+  font: inherit;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-prompt-manager input,
+.muzhi-prompt-manager select {
+  min-height: 38px;
+  padding: 0 30px 0 11px;
+}
+
+.muzhi-prompt-manager textarea {
+  min-height: 180px;
+  padding: 11px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.muzhi-prompt-manager textarea[readonly] {
+  color: var(--muzhi-muted);
+  background: color-mix(in srgb, var(--muzhi-panel-subtle) 70%, transparent);
+}
+
+.muzhi-prompt-manager__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.muzhi-prompt-manager__order {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.muzhi-prompt-manager__order-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+  padding: 5px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 11px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-prompt-manager__order-item.is-selected {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-accent) 55%,
+    var(--muzhi-border)
+  );
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-prompt-manager__drag {
+  padding-inline: 5px;
+  color: var(--muzhi-muted);
+  cursor: grab;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.muzhi-prompt-manager__order-name {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  border-color: transparent !important;
+  padding-inline: 8px !important;
+  overflow: hidden;
+  text-align: left;
+  background: transparent !important;
+}
+
+.muzhi-prompt-manager__order-name span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-prompt-manager__icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  min-height: 34px !important;
+  padding: 0 !important;
+}
+
+.muzhi-prompt-manager__icon {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+
+.muzhi-prompt-manager__lock-note {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-prompt-manager__create-layer {
+  position: fixed;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.muzhi-prompt-manager__create-backdrop {
+  position: absolute;
+  inset: 0;
+  min-height: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  background: rgb(4 10 20 / 58%) !important;
+}
+
+.muzhi-prompt-manager__create-dialog {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  width: min(100%, 430px);
+  padding: 18px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 15px;
+  background: var(--muzhi-panel);
+  box-shadow: 0 22px 60px rgb(0 0 0 / 38%);
+}
+
+.muzhi-prompt-manager__create-dialog h3,
+.muzhi-prompt-manager__create-dialog p {
+  margin: 0;
+}
+
+.muzhi-prompt-manager__create-dialog p {
+  color: var(--muzhi-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.muzhi-prompt-manager__create-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.muzhi-prompt-manager button {
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 13px;
+  background: var(--muzhi-panel-subtle);
+  cursor: pointer;
+}
+
+.muzhi-prompt-manager button:hover:not(:disabled) {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-accent) 50%,
+    var(--muzhi-border)
+  );
+  background: color-mix(in srgb, var(--muzhi-accent) 10%, var(--muzhi-panel));
+}
+
+.muzhi-prompt-manager button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.muzhi-prompt-manager button:focus-visible,
+.muzhi-prompt-manager input:focus-visible,
+.muzhi-prompt-manager select:focus-visible,
+.muzhi-prompt-manager textarea:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-prompt-manager__primary {
+  justify-self: start;
+  border-color: transparent !important;
+  color: var(--muzhi-on-accent) !important;
+  background: var(--muzhi-accent) !important;
+  font-weight: 650 !important;
+}
+
+.muzhi-prompt-manager__danger {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-danger) 45%,
+    var(--muzhi-border)
+  ) !important;
+  color: var(--muzhi-danger) !important;
+  background: var(--muzhi-danger-soft) !important;
+}
+
+@media (max-width: 560px) {
+  .muzhi-prompt-manager-layer {
+    padding: 10px;
+  }
+
+  .muzhi-prompt-manager {
+    max-height: calc(100vh - 20px);
+    padding: 16px;
+    border-radius: 14px;
+  }
+}

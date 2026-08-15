@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 使用问题
+    url: https://github.com/StaySound4/bilimuzhi/discussions
+    about: 不知道怎么用?先去 README 看看,也可以在 Discussions 里提问

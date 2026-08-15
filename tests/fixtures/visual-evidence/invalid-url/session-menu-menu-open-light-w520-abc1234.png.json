@@ -1,0 +1,14 @@
+{
+  "file": "session-menu-menu-open-light-w520-abc1234.png",
+  "sha256": "ea8c5a7137ce1eba64f34225800090800d70d6d1868d5c8cc481f1dc8c74f7d8",
+  "commit": "abc1234",
+  "viewport": "520x900",
+  "deviceScaleFactor": 1,
+  "activeTab": "timeline",
+  "interactionStep": 0,
+  "themeAttribute": {
+    "name": "data-theme"
+  },
+  "url": "chrome-extension://abcdefghijklmnopqrstuvwxyzabcdef/sidepanel.html?scenario=undefined",
+  "capturedAt": "2026-08-11T10:00:00.000Z"
+}

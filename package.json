@@ -1,0 +1,52 @@
+{
+  "name": "muzhi-extension",
+  "version": "0.9.0",
+  "private": true,
+  "description": "Bilimuzhi：面向哔哩哔哩视频的字幕时间轴、会话与 AI 工作区浏览器扩展",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write --ignore-unknown package.json tsconfig.json eslint.config.mjs vite.config.ts vite.content.config.ts vitest.unit.config.ts vitest.component.config.ts vitest.integration.config.ts playwright.config.ts \"src/**/*.{ts,tsx,html,css}\" src/extension-static/manifest.json \"tests/{unit,component,integration,e2e,visual}/**/*.{ts,tsx}\" scripts/clean-extension-build.mjs scripts/generate-extension-icons.mjs scripts/package-extension.ps1 scripts/verify-package.ps1 scripts/scan-secrets.ps1",
+    "format:check": "prettier --check --ignore-unknown package.json tsconfig.json eslint.config.mjs vite.config.ts vite.content.config.ts vitest.unit.config.ts vitest.component.config.ts vitest.integration.config.ts playwright.config.ts \"src/**/*.{ts,tsx,html,css}\" src/extension-static/manifest.json \"tests/{unit,component,integration,e2e,visual}/**/*.{ts,tsx}\" scripts/clean-extension-build.mjs scripts/generate-extension-icons.mjs scripts/package-extension.ps1 scripts/verify-package.ps1 scripts/scan-secrets.ps1",
+    "lint": "eslint .",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run test:unit && npm run test:component && npm run test:integration",
+    "test:baseline": "npm test",
+    "test:unit": "vitest run --config vitest.unit.config.ts",
+    "test:component": "vitest run --config vitest.component.config.ts",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "build": "node scripts/clean-extension-build.mjs && vite build && vite build --config vite.content.config.ts",
+    "build:qa": "node scripts/build-qa.mjs",
+    "test:e2e": "npm run build && playwright test --config playwright.config.ts --project=e2e",
+    "test:visual": "npm run build:qa && node scripts/check-qa-harness-isolation.mjs --expect=present && playwright test --config playwright.config.ts --project=visual",
+    "check:visual-evidence": "node scripts/check-visual-evidence.mjs",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run check:i18n && npm test && npm run build",
+    "check:full": "npm run check && npm run test:e2e && npm run scan:secrets",
+    "snapshot:candidate": "node scripts/compute-candidate-snapshot.mjs",
+    "generate:icons": "node scripts/generate-extension-icons.mjs",
+    "scan:secrets": "pwsh -NoProfile -File scripts/scan-secrets.ps1",
+    "package:extension": "pwsh -NoProfile -File scripts/package-extension.ps1 -Source dist/extension -Destination release/muzhi-extension",
+    "verify:package": "pwsh -NoProfile -File scripts/verify-package.ps1 -Path release/muzhi-extension",
+    "verify:extension": "npm run build && pwsh -NoProfile -File scripts/verify-package.ps1 -Path dist/extension"
+  },
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "katex": "^0.16.47",
+    "preact": "10.29.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@preact/preset-vite": "2.10.5",
+    "@testing-library/preact": "3.2.4",
+    "eslint": "10.7.0",
+    "fake-indexeddb": "6.2.5",
+    "jsdom": "29.1.1",
+    "playwright": "1.61.1",
+    "prettier": "3.9.5",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.63.0",
+    "vite": "8.1.4",
+    "vitest": "4.1.10"
+  }
+}

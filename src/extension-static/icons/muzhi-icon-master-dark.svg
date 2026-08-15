@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+    <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#242B37"/><stop offset="0.45" stop-color="#161C25"/><stop offset="1" stop-color="#090D13"/></linearGradient><linearGradient id="mgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.45" stop-color="#EEF1F5"/><stop offset="1" stop-color="#B5BDC8"/></linearGradient><linearGradient id="agrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#818CF8"/><stop offset="0.35" stop-color="#6366F1"/><stop offset="1" stop-color="#4F46E5"/></linearGradient></defs>
+    
+        <rect x="64" y="64" width="896" height="896" rx="188" fill="url(#bg)" stroke="#3A4352" stroke-width="14"/>
+        <rect x="77" y="77" width="870" height="870" rx="176" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="5"/>
+        
+    <path d="M 286 724 L 222 660 L 222 278 L 340 278 L 430 368 L 594 368 L 684 278 L 802 278 L 802 660 L 738 724" fill="none" stroke="#05070B" stroke-width="106" stroke-linejoin="miter" stroke-linecap="square" opacity="0.90"/>
+    <path d="M 286 724 L 222 660 L 222 278 L 340 278 L 430 368 L 594 368 L 684 278 L 802 278 L 802 660 L 738 724" fill="none" stroke="url(#mgrad)" stroke-width="84" stroke-linejoin="miter" stroke-linecap="square"/>
+    <path d="M 288 714 L 228 654 L 228 288 L 338 288 L 426 376 L 598 376 L 686 288 L 796 288 L 796 654 L 736 714" fill="none" stroke="#FFFFFF" stroke-opacity="0.30" stroke-width="7" stroke-linejoin="miter" stroke-linecap="square"/>
+    <rect x="409" y="527" width="206" height="50" rx="18" fill="#05070B" opacity="0.65"/>
+    <rect x="409" y="607" width="206" height="50" rx="18" fill="#05070B" opacity="0.65"/>
+    <rect x="413" y="522" width="198" height="50" rx="18" fill="url(#agrad)" stroke="#A5B4FC" stroke-width="6"/>
+    <rect x="413" y="602" width="198" height="50" rx="18" fill="url(#agrad)" stroke="#A5B4FC" stroke-width="6"/>
+    </svg>

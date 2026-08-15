@@ -1,0 +1,159 @@
+.muzhi-dialog-layer {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  /*
+   * AppDialog is the final application-modal layer and can be opened from
+   * settings, session, archive and trash drawers. Keep it above every drawer
+   * and drawer-local confirmation layer so its backdrop receives input.
+   */
+  z-index: 120;
+}
+
+.muzhi-dialog-layer__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgb(0 0 0 / 45%);
+  cursor: pointer;
+}
+
+.muzhi-dialog {
+  max-height: min(82vh, 640px);
+  overflow-y: auto;
+
+  position: relative;
+  width: min(100%, 420px);
+  padding: 18px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 16px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 32%);
+}
+
+.muzhi-dialog form {
+  display: grid;
+  gap: 12px;
+}
+
+.muzhi-dialog h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.muzhi-dialog p {
+  white-space: pre-line;
+}
+.muzhi-dialog p {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.muzhi-dialog__field {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--muzhi-muted);
+}
+
+.muzhi-dialog__field input,
+.muzhi-dialog__field select {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 13px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-dialog__options {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+}
+
+.muzhi-dialog__options legend {
+  padding: 0 5px;
+}
+
+.muzhi-dialog__options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  color: var(--muzhi-text);
+  font-size: 13px;
+}
+
+.muzhi-dialog__options input[type="checkbox"] {
+  min-height: 0;
+  padding: 0;
+}
+
+.muzhi-dialog__field input:focus-visible,
+.muzhi-dialog__field select:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 1px;
+}
+
+.muzhi-dialog__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.muzhi-dialog__actions button {
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 13px;
+  background: var(--muzhi-panel);
+  cursor: pointer;
+}
+
+.muzhi-dialog__actions button:hover:not(:disabled) {
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-dialog__actions button:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-dialog__actions button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.muzhi-dialog__primary {
+  border-color: transparent !important;
+  color: var(--muzhi-on-accent) !important;
+  background: var(--muzhi-accent) !important;
+  font-weight: 600;
+}
+
+.muzhi-dialog__danger {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-danger) 45%,
+    transparent
+  ) !important;
+  color: var(--muzhi-danger) !important;
+  background: var(--muzhi-danger-soft) !important;
+  font-weight: 600;
+}

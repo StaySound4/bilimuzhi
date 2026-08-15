@@ -1,0 +1,21 @@
+.muzhi-workspace-empty {
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  min-height: 160px;
+  padding: 24px;
+  border: 1px dashed var(--muzhi-border);
+  border-radius: 12px;
+  color: var(--muzhi-text-secondary);
+  text-align: center;
+  background: var(--muzhi-surface-2);
+}
+.muzhi-workspace-empty strong {
+  color: var(--muzhi-text);
+  font-size: 15px;
+}
+.muzhi-workspace-empty p,
+.muzhi-workspace-empty small {
+  margin: 0;
+  line-height: 1.55;
+}

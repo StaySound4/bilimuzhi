@@ -1,0 +1,1961 @@
+.muzhi-batch {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+}
+
+.muzhi-batch h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.muzhi-batch h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.muzhi-batch__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.muzhi-batch__header-support {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.muzhi-batch__header-support > p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.muzhi-batch__header-support > button {
+  flex: 0 0 auto;
+}
+
+.muzhi-batch__eyebrow {
+  margin: 0;
+  color: var(--muzhi-accent-strong);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.muzhi-batch__form {
+  display: grid;
+  gap: 10px;
+  padding: 12px 0;
+  border-block: 1px solid var(--muzhi-border);
+  background: transparent;
+}
+
+.muzhi-batch__field {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--muzhi-muted);
+  min-width: 0;
+}
+
+.muzhi-batch__field--inline {
+  min-width: 140px;
+}
+
+.muzhi-batch__source-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  position: relative;
+}
+
+.muzhi-batch__field--source-input {
+  min-width: 0;
+}
+
+.muzhi-batch__source-help {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  min-height: 24px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  color: var(--muzhi-muted) !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  background: var(--muzhi-panel-subtle) !important;
+}
+
+.muzhi-batch__field--source-input input {
+  padding-right: 38px;
+}
+
+.muzhi-batch__field input,
+.muzhi-batch__field select {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 13px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__field input:focus-visible,
+.muzhi-batch__field select:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 1px;
+}
+
+.muzhi-batch__form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: end;
+}
+
+.muzhi-batch__page-selection {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  min-width: 0;
+  margin: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-batch__page-selection legend {
+  width: 100%;
+  padding: 0 4px;
+  color: var(--muzhi-muted);
+  font-size: 11px;
+}
+
+.muzhi-batch__page-selection label {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--muzhi-text);
+  font-size: 12px;
+}
+
+.muzhi-batch__hint,
+.muzhi-batch__status,
+.muzhi-batch__result-meta,
+.muzhi-batch__job-meta,
+.muzhi-batch__item-meta {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-batch__error {
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--muzhi-danger) 40%, transparent);
+  border-radius: 10px;
+  color: var(--muzhi-danger);
+  font-size: 13px;
+  background: var(--muzhi-danger-soft);
+}
+
+.muzhi-batch__inline-error {
+  margin: 0;
+  color: var(--muzhi-danger);
+  font-size: 12px;
+}
+
+.muzhi-batch__inline-hint,
+.muzhi-batch__controls-note {
+  margin: 0;
+  color: var(--muzhi-text-muted);
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.muzhi-batch__controls-note {
+  padding: 7px 9px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-batch__prepare-progress {
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muzhi-accent);
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-batch__prepare-progress::-webkit-progress-bar {
+  border-radius: 999px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-batch__prepare-progress::-webkit-progress-value {
+  border-radius: 999px;
+  background: var(--muzhi-accent);
+}
+
+.muzhi-batch button {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 13px;
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.muzhi-batch button:hover:not(:disabled) {
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-batch button:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-batch button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.muzhi-batch__primary-action {
+  border-color: transparent !important;
+  color: var(--muzhi-on-accent) !important;
+  background: var(--muzhi-accent) !important;
+  font-weight: 600;
+}
+
+.muzhi-batch__primary-action:hover:not(:disabled) {
+  background: var(--muzhi-accent-strong) !important;
+}
+
+.muzhi-batch__danger-action {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-danger) 45%,
+    transparent
+  ) !important;
+  color: var(--muzhi-danger) !important;
+  background: var(--muzhi-danger-soft) !important;
+}
+
+.muzhi-batch__result {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.muzhi-batch__result-header h3 {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.muzhi-batch__result-header .muzhi-batch__result-meta {
+  margin: 0 0 0 8px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.muzhi-batch__result-header > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  min-width: 0;
+}
+
+.muzhi-batch__result-header button {
+  min-height: 20px;
+  padding: 0 7px;
+  font-size: 10.5px;
+}
+
+.muzhi-batch__result-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* Region 3：状态筛选 chips（只改变 UI 投影）。 */
+.muzhi-batch__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 4px 0 0;
+}
+
+.muzhi-batch__filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 999px;
+  color: var(--muzhi-text-secondary);
+  background: var(--muzhi-panel-subtle);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.muzhi-batch__filter-chip small {
+  color: var(--muzhi-muted);
+  font-size: 11px;
+}
+
+.muzhi-batch__filter-chip:hover {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-text);
+}
+
+.muzhi-batch__filter-chip[aria-pressed="true"] {
+  border-color: var(--muzhi-accent-strong);
+  color: var(--muzhi-panel);
+  background: var(--muzhi-accent-strong);
+}
+
+.muzhi-batch__filter-chip[aria-pressed="true"] small {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.muzhi-batch__filter-chip:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-batch__filter-empty {
+  margin: 8px 2px 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-batch__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel-subtle);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.muzhi-batch__action-separator {
+  align-self: stretch;
+  width: 1px;
+  min-height: 24px;
+  margin: 0 2px;
+  background: var(--muzhi-border);
+}
+
+.muzhi-batch__start-compat {
+  color: var(--muzhi-muted) !important;
+}
+
+.muzhi-batch__items {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.muzhi-batch__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 11px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__item[data-status="succeeded"] {
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__item[data-status="failed"] {
+  border-color: color-mix(in srgb, var(--muzhi-danger) 45%, transparent);
+  background: var(--muzhi-danger-soft);
+}
+
+.muzhi-batch__item[data-status="running"] {
+  border-color: var(--muzhi-accent);
+}
+
+.muzhi-batch__item-body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.muzhi-batch__item-title {
+  margin: 0;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-batch__hscroll {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid var(--muzhi-border);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  background: var(--muzhi-panel-subtle);
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.muzhi-batch__hscroll-track {
+  height: 1px;
+}
+
+.muzhi-batch__hscroll:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+/* 列表专属垂直滚动区：限高后列表内滚动，表头 sticky 严格对齐；
+   横向滚动由顶部 hscroll 控制，底部原生横向滚动条作为冗余入口保留
+   并与顶部双向同步（Ticket 04）。 */
+.muzhi-batch__table-scroll {
+  flex: 1 1 80px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-height: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 0 0 12px 12px;
+  background: var(--muzhi-panel);
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.muzhi-batch__table-scroll:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-batch__table {
+  position: relative;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  color: var(--muzhi-text);
+  font-size: 12px;
+}
+
+.muzhi-batch__table th,
+.muzhi-batch__table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--muzhi-border) 75%, var(--muzhi-muted));
+  border-right: 1px solid
+    color-mix(in srgb, var(--muzhi-border) 65%, transparent);
+  text-align: left;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+/* 表头：sticky top，层级高于数据行 td（防止滚动时被序号列等覆盖）。 */
+.muzhi-batch__table th {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  color: var(--muzhi-muted);
+  font-weight: 650;
+  background: var(--muzhi-panel-subtle);
+  white-space: nowrap;
+}
+
+/* 左上角：序号表头同时 sticky top + left，层级最高。 */
+.muzhi-batch__table thead th:first-child {
+  left: 0;
+  z-index: 4;
+}
+
+/* 列头问号帮助按钮（状态/操作列；Ticket 03）：inline 小圆钮。 */
+.muzhi-batch .muzhi-batch__column-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  min-height: 13px;
+  margin: 0 0 0 4px;
+  padding: 0;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 50%;
+  background: var(--muzhi-panel-subtle);
+  color: var(--muzhi-muted);
+  font: inherit;
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.muzhi-batch__column-help:hover,
+.muzhi-batch__column-help:focus-visible {
+  border-color: var(--muzhi-accent-strong);
+  color: var(--muzhi-accent-strong);
+}
+.muzhi-batch__column-help:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 1px;
+}
+
+/* 列边界拖拽线（header-only）：位于可调 th 的 inline-end，仅表头高度，
+   不覆盖数据区；命中区与 1px 视觉线分离，常态低显著，hover/focus/drag 可见。 */
+
+.muzhi-batch__resizer {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  cursor: col-resize;
+  touch-action: none;
+  background: color-mix(in srgb, var(--muzhi-accent-strong) 22%, transparent);
+  opacity: 0.55;
+  transition:
+    opacity 120ms ease,
+    background 120ms ease;
+}
+
+.muzhi-batch__resizer:hover,
+.muzhi-batch__resizer:focus-visible,
+.muzhi-batch__resizer.is-dragging {
+  opacity: 1;
+  background: var(--muzhi-accent-strong);
+  outline: none;
+}
+
+.muzhi-batch__resizer:focus-visible {
+  box-shadow: 0 0 0 2px var(--muzhi-focus);
+}
+.muzhi-batch__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.muzhi-batch__table tbody tr[data-status="succeeded"] {
+  background: transparent;
+}
+
+.muzhi-batch__table tbody tr.is-selected {
+  background: color-mix(
+    in srgb,
+    var(--muzhi-accent-soft) 82%,
+    var(--muzhi-panel)
+  );
+  box-shadow: inset 4px 0 0 var(--muzhi-accent);
+}
+
+.muzhi-batch__table tbody tr {
+  cursor: pointer;
+}
+
+.muzhi-batch__table select {
+  width: 100%;
+  min-width: 164px;
+  min-height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  font: inherit;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__table select:focus-visible,
+.muzhi-batch__table input:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+/* 序号列：sticky left 固定 + 不透明背景（滚动时不透出内容）+ 明显分隔线。 */
+.muzhi-batch__index-cell {
+  position: sticky;
+  z-index: 2;
+  left: 0;
+  width: 64px;
+  background: var(--muzhi-panel);
+  white-space: nowrap;
+  border-right: 1px solid
+    color-mix(in srgb, var(--muzhi-accent-strong) 45%, var(--muzhi-border));
+  box-shadow: 2px 0 8px rgb(0 0 0 / 20%);
+}
+
+.muzhi-batch__table tbody tr.is-selected .muzhi-batch__index-cell {
+  box-shadow:
+    inset 3px 0 0 var(--muzhi-accent),
+    2px 0 8px rgb(0 0 0 / 20%);
+}
+
+.muzhi-batch__table tbody tr[data-status="running"] .muzhi-batch__index-cell {
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-batch__table tbody tr[data-status="succeeded"] .muzhi-batch__index-cell {
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__table tbody tr[data-status="failed"] .muzhi-batch__index-cell {
+  background: var(--muzhi-danger-soft);
+}
+
+.muzhi-batch__index-cell input {
+  margin: 0 6px 0 0;
+  width: 14px;
+  height: 14px;
+}
+
+/* 操作列：td 保持表格布局（relative 基准）。
+   Ticket 03：图标按钮单行横排（settings/download/trash），按钮
+   absolute 铺满行高（top/bottom 相对 td），行分割线与行线对齐；
+   按钮固定 30px 宽 + 4px gap，列最小宽度按 3 图标量测（118px：
+   内容 98px + td padding 20px）。 */
+.muzhi-batch__table td.muzhi-batch__actions-cell {
+  position: relative;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.muzhi-batch__actions-cell button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  background: var(--muzhi-panel-subtle);
+  color: var(--muzhi-text);
+  cursor: pointer;
+}
+.muzhi-batch__actions-cell button:nth-child(1) {
+  left: 10px;
+}
+.muzhi-batch__actions-cell button:nth-child(2) {
+  left: 44px;
+}
+.muzhi-batch__actions-cell button:nth-child(3) {
+  left: 78px;
+}
+
+.muzhi-batch__actions-cell button svg {
+  flex: none;
+}
+.muzhi-batch__actions-cell button:not(:disabled):hover,
+.muzhi-batch__actions-cell button:not(:disabled):focus-visible {
+  border-color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+.muzhi-batch__actions-cell button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.muzhi-batch__actions-cell .muzhi-batch__item-remove {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-danger) 45%,
+    var(--muzhi-border)
+  );
+  color: var(--muzhi-danger);
+}
+
+.muzhi-batch__status-cell {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* 状态列紧凑行：徽标（状态 · 语言）+ 行数/错误/进度 + 清除按钮水平排布。 */
+.muzhi-batch__status-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  align-items: center;
+  min-width: 0;
+}
+
+.muzhi-batch__status-line small {
+  color: var(--muzhi-muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.muzhi-batch__status-line .muzhi-batch__progress-text {
+  color: var(--muzhi-muted);
+}
+
+.muzhi-batch__status-line small.is-error {
+  color: var(--muzhi-danger);
+}
+
+.muzhi-batch__status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  min-height: 22px;
+  padding: 0 7px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 999px;
+  background: var(--muzhi-panel);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* 状态灯：颜色不是唯一信息载体（badge 同时带可见文本）。 */
+.muzhi-batch__status-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muzhi-muted);
+}
+.muzhi-batch__status-dot[data-status="running"] {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--muzhi-border);
+  border-top-color: var(--muzhi-accent);
+  background: transparent;
+  animation: muzhi-session-spin 800ms linear infinite;
+}
+.muzhi-batch__status-dot[data-status="succeeded"] {
+  background: var(--muzhi-success);
+}
+.muzhi-batch__status-dot[data-status="failed"] {
+  background: var(--muzhi-danger);
+}
+.muzhi-batch__status-dot[data-status="cancelled"] {
+  background: var(--muzhi-muted);
+}
+
+/* 左侧批量列表的行状态槽:running 转圈,完成/失败变点(复用会话模式动画)。 */
+.muzhi-batch__job-state {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--muzhi-muted);
+}
+.muzhi-batch__job-state[data-status="running"] {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--muzhi-border);
+  border-top-color: var(--muzhi-accent);
+  background: transparent;
+  animation: muzhi-session-spin 800ms linear infinite;
+}
+.muzhi-batch__job-state[data-status="completed"] {
+  background: var(--muzhi-success);
+}
+.muzhi-batch__job-state[data-status="failed"] {
+  background: var(--muzhi-danger);
+}
+.muzhi-batch__job-state[data-status="cancelled"],
+.muzhi-batch__job-state[data-status="preparing"],
+.muzhi-batch__job-state[data-status="ready"] {
+  background: var(--muzhi-muted);
+}
+
+.muzhi-batch__clear-item {
+  min-height: 24px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-muted);
+  font: inherit;
+  font-size: 12px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__clear-item:hover {
+  border-color: var(--muzhi-accent-strong);
+  color: var(--muzhi-text);
+}
+
+.muzhi-batch__clear-item:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+/* 轨道选择框：状态列第二行，占满列宽。 */
+.muzhi-batch__track-select {
+  width: 100%;
+  min-width: 0;
+  margin-top: 4px;
+  min-height: 24px;
+  padding: 0 6px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 12px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__track-select:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-batch__status-cell small,
+.muzhi-batch__table td small {
+  display: block;
+  margin-top: 0;
+  color: var(--muzhi-muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.muzhi-batch__status-cell .muzhi-batch__progress-text {
+  color: var(--muzhi-muted);
+}
+
+.muzhi-batch__status-cell small.is-error {
+  color: var(--muzhi-danger);
+}
+
+.muzhi-batch__status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  max-width: 100%;
+  min-height: 22px;
+  padding: 0 7px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 999px;
+  background: var(--muzhi-panel);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.muzhi-batch__clear-item {
+  justify-self: start;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-muted);
+  font: inherit;
+  font-size: 12px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__clear-item:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+/* flex 列默认单行省略；forceFullText 开启后换行完整显示（列宽不变）。 */
+.muzhi-batch__cell-text {
+  min-width: 0;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-batch__cell-text strong {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.muzhi-batch__cell-text small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muzhi-muted);
+  font-size: 11px;
+}
+
+.muzhi-batch__table.is-full-text .muzhi-batch__cell-text {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.muzhi-batch__force-full-text.is-active {
+  border-color: var(--muzhi-accent-strong);
+  color: var(--muzhi-panel);
+  background: var(--muzhi-accent-strong);
+}
+
+.muzhi-batch__overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgb(0 0 0 / 45%);
+  z-index: 40;
+}
+
+.muzhi-batch__dialog {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 420px);
+  padding: 18px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 16px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 30%);
+}
+
+.muzhi-batch__dialog p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.muzhi-batch__dialog-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Ticket 04：来源 Dialog 三按钮统一深色 ghost（去蓝底、同款式）。 */
+.muzhi-batch__dialog-actions .muzhi-batch__dialog-action {
+  min-height: 32px;
+  padding: 0 14px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muzhi-text);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.muzhi-batch__dialog-actions .muzhi-batch__dialog-action:not(:disabled):hover,
+.muzhi-batch__dialog-actions
+  .muzhi-batch__dialog-action:not(:disabled):focus-visible {
+  background: var(--muzhi-panel-subtle);
+}
+.muzhi-batch__dialog-actions .muzhi-batch__dialog-action:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.muzhi-batch__export-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.muzhi-batch__export-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+}
+
+.muzhi-batch__export-fields legend {
+  padding: 0 4px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-batch__export-fields label {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+  font-size: 13px;
+}
+
+@container (max-width: 399px) {
+  .muzhi-batch__header-support {
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100%;
+  }
+
+  .muzhi-batch__header-support > button {
+    flex: 1 1 auto;
+  }
+
+  .muzhi-batch__source-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .muzhi-batch__field--source-kind,
+  .muzhi-batch__field--inline {
+    width: 100%;
+  }
+
+  .muzhi-batch__form-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .muzhi-batch__actions button {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .muzhi-batch__action-separator {
+    display: none;
+  }
+
+  /* Ticket 09 窄屏：filter chips 单行横向滚动，结果不横滚。 */
+  .muzhi-batch__filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+  .muzhi-batch {
+    overflow-y: hidden;
+  }
+
+  .muzhi-batch__result {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .muzhi-batch__result > * + * {
+    margin-top: 0;
+  }
+  /* 卡片视图（≤399）下拖拽线不适用：隐藏并移出可访问树。 */
+  .muzhi-batch__resizer {
+    display: none;
+  }
+
+  .muzhi-batch__table-scroll {
+    flex: 1 1 80px;
+    min-height: 56px;
+    max-height: none;
+    overflow-x: clip;
+    overflow-y: auto;
+    border-radius: 12px;
+  }
+
+  .muzhi-batch__hscroll {
+    display: none;
+  }
+
+  .muzhi-batch__table {
+    --muzhi-batch-table-min: 0px;
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .muzhi-batch__table thead {
+    display: table-header-group;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    background: var(--muzhi-panel);
+  }
+
+  .muzhi-batch__table thead tr {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .muzhi-batch__table thead th {
+    display: block;
+    min-width: 0;
+    padding: 6px 4px;
+    overflow: hidden;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .muzhi-batch__table tbody {
+    display: grid;
+    gap: 0;
+    width: 100%;
+  }
+
+  .muzhi-batch__table tbody tr {
+    display: grid;
+    grid-template-areas:
+      "index index"
+      "status status"
+      "title title"
+      "author published"
+      "identity identity"
+      "actions actions";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--muzhi-border);
+    border-radius: 10px;
+  }
+
+  .muzhi-batch__table tbody tr.is-selected {
+    border-color: var(--muzhi-accent);
+    box-shadow: inset 4px 0 0 var(--muzhi-accent);
+  }
+
+  .muzhi-batch__table tbody tr td {
+    display: block;
+    min-width: 0;
+    padding: 0 10px;
+    font-size: 11.5px;
+    line-height: 1.35;
+    border-bottom: 1px solid var(--muzhi-border);
+    border-right: 0;
+    white-space: normal;
+  }
+
+  /* 卡视图 grid-area 映射按 data-column-id（Ticket 03 review 修复）：
+     旧 nth-child 映射按 v1 列序（index/status/title/author/published/
+     identity/actions），与 v2 DOM 顺序（index/title/status/actions/
+     author/published/identity）错位，窄屏卡片内容全部串位；
+     data-column-id 跟随 DOM，列排序/隐藏变化也不会错位。 */
+  .muzhi-batch__table tbody tr td[data-column-id="index"] {
+    grid-area: index;
+  }
+
+  .muzhi-batch__table tbody tr td[data-column-id="status"] {
+    grid-area: status;
+  }
+
+  .muzhi-batch__table tbody tr td[data-column-id="title"] {
+    grid-area: title;
+  }
+
+  .muzhi-batch__table tbody tr td[data-column-id="author"] {
+    grid-area: author;
+  }
+
+  .muzhi-batch__table tbody tr td[data-column-id="published"] {
+    grid-area: published;
+  }
+
+  .muzhi-batch__table tbody tr td[data-column-id="identity"] {
+    grid-area: identity;
+  }
+
+  .muzhi-batch__table tbody tr td[data-column-id="actions"] {
+    grid-area: actions;
+  }
+
+  .muzhi-batch__table tbody tr td::before {
+    content: attr(data-label);
+    display: inline-block;
+    min-width: 54px;
+    margin-right: 6px;
+    vertical-align: top;
+    color: var(--muzhi-muted);
+    font-size: 10px;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  /* 卡视图：td 内容默认单行截断（卡片空间预算）。
+     全文本开关仍全局生效：.muzhi-batch__table.is-full-text .muzhi-batch__cell-text
+     的特异性（0,0,3,0）高于本规则（0,0,1,3），开启后卡视图同样展开完整标题。 */
+  .muzhi-batch__table tbody tr td > * {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* 卡视图操作列：图标按钮单行横排（Ticket 03）。
+     td 为 block 流（行高由内容驱动），容器恢复静态 flex，
+     按钮按内容高度（卡视图无行高对齐需求）。 */
+  .muzhi-batch__table tbody tr td.muzhi-batch__actions-cell {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 10px;
+  }
+
+  .muzhi-batch__actions-cell {
+    position: static;
+    height: auto;
+  }
+
+  .muzhi-batch__table tbody tr td.muzhi-batch__actions-cell button {
+    position: static;
+    left: auto;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 27px;
+    min-height: 0;
+  }
+
+  /* 卡视图：标题/身份的状态子行内联，压缩卡片高度（Ticket 11 预算）。 */
+  .muzhi-batch__table tbody tr td .muzhi-batch__cell-text small {
+    display: inline;
+    margin: 0 0 0 6px;
+  }
+
+  .muzhi-batch__table tbody tr td .muzhi-batch__status-line {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2px 6px;
+    align-items: baseline;
+    vertical-align: top;
+  }
+
+  .muzhi-batch__table tbody tr td .muzhi-batch__cell-text {
+    display: inline-block;
+    vertical-align: top;
+    /* label（::before 54px + margin 6px）与内容单行同行，内容受宽后
+       ellipsis 截断（Ticket 03 review：缺 max-width 时换行撑高卡片）。 */
+    max-width: calc(100% - 62px);
+  }
+
+  .muzhi-batch__index-cell {
+    position: static;
+    width: auto;
+  }
+
+  .muzhi-batch__status-cell,
+  .muzhi-batch__actions-cell,
+  .muzhi-batch__title-cell,
+  .muzhi-batch__identity-cell {
+    width: auto;
+    min-width: 0;
+  }
+
+  /* 卡视图：操作按钮保持表格视图的横排 flex（Ticket 03 图标化）。 */
+  .muzhi-batch__actions-cell {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .muzhi-batch__status-cell {
+    align-content: start;
+  }
+
+  .muzhi-batch__cell-text {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .muzhi-batch__table select {
+    min-width: 0;
+  }
+
+  .muzhi-batch__clear-item {
+    justify-self: start;
+  }
+
+  /* 卡片视图：操作列图标按钮固定 30px 宽（与表格视图一致）。 */
+  .muzhi-batch__actions-cell button {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+/* 统一「批量获取字幕」Dialog 的 radio 组。 */
+.muzhi-batch__acquire-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  border: 0;
+}
+.muzhi-batch__acquire-fieldset legend {
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--muzhi-muted);
+}
+.muzhi-batch__acquire-fieldset label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 13px;
+}
+.muzhi-batch__acquire-fieldset label:has(input:disabled) {
+  opacity: 0.55;
+}
+.muzhi-batch__acquire-hint {
+  width: 100%;
+  color: var(--muzhi-muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.muzhi-batch__actions.is-contextual {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-accent) 42%,
+    var(--muzhi-border)
+  );
+  background: var(--muzhi-surface-selected);
+}
+.muzhi-batch__actions > strong {
+  margin-right: auto;
+  font-size: 12px;
+  font-weight: 600;
+}
+.muzhi-batch__selection-empty {
+  margin-right: auto;
+  color: var(--muzhi-text-secondary);
+  font-size: 12px;
+}
+
+.muzhi-batch__filter-outside {
+  margin: 6px 2px 0;
+  padding: 6px 10px;
+  border: 1px solid
+    color-mix(in srgb, var(--muzhi-warning) 42%, var(--muzhi-border));
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: color-mix(in srgb, var(--muzhi-warning) 8%, var(--muzhi-panel));
+  font-size: 12px;
+}
+
+.muzhi-batch__filter-outside button {
+  margin-left: 8px;
+  min-height: 36px;
+  padding: 2px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.muzhi-batch__filter-outside button:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+/* Ticket 03：列表控制紧邻数据，纵向滚动只属于数据行区域。 */
+.muzhi-batch__list-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  align-items: center;
+  min-width: 0;
+}
+
+.muzhi-batch__list-toolbar .muzhi-compact-menu__trigger {
+  width: auto;
+  min-width: 34px;
+}
+
+.muzhi-batch__filter-summary,
+.muzhi-batch__running-summary {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-batch__running-summary {
+  margin-left: auto;
+}
+
+.muzhi-batch__page-jump {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.muzhi-batch__page-jump input {
+  width: 58px;
+  min-height: 32px;
+  padding: 0 6px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  font: inherit;
+}
+
+.muzhi-batch__page-jump input:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 1px;
+}
+
+/* 覆盖旧的低高度降级：页面不再接管纵向滚动。 */
+@media (max-height: 950px) {
+  .muzhi-batch {
+    overflow-y: hidden;
+  }
+
+  .muzhi-batch__result {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .muzhi-batch__result > * + * {
+    margin-top: 0;
+  }
+
+  .muzhi-batch__table-scroll {
+    flex: 1 1 80px;
+    min-height: 56px;
+    max-height: none;
+    overflow-y: auto;
+  }
+}
+
+/* 极窄且低的 Side Panel：保留唯一全选与分页入口，只压缩次要信息。 */
+@media (max-width: 420px) and (max-height: 650px) {
+  .muzhi-batch {
+    gap: 6px;
+  }
+
+  .muzhi-batch__header,
+  .muzhi-batch__status,
+  .muzhi-batch__prepare-progress,
+  .muzhi-batch__result-header > div,
+  .muzhi-batch__actions.is-idle,
+  .muzhi-batch__running-summary {
+    display: none;
+  }
+
+  .muzhi-batch__form {
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    overflow: visible;
+  }
+
+  .muzhi-batch__form > :not(.muzhi-batch__source-row),
+  .muzhi-batch__source-row > :not(.muzhi-batch__field--source-input),
+  .muzhi-batch__field--source-input > :not(.muzhi-batch__source-help) {
+    display: none;
+  }
+
+  .muzhi-batch__source-row,
+  .muzhi-batch__field--source-input {
+    display: contents;
+  }
+
+  .muzhi-batch__source-help {
+    position: static;
+  }
+
+  .muzhi-batch__result {
+    gap: 4px;
+  }
+
+  .muzhi-batch__result-header,
+  .muzhi-batch__list-toolbar,
+  .muzhi-batch__actions {
+    flex: 0 0 auto;
+  }
+
+  .muzhi-batch__result-header,
+  .muzhi-batch__list-toolbar {
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+
+  .muzhi-batch__result-header button {
+    min-height: 28px;
+    padding-inline: 7px;
+  }
+
+  .muzhi-batch__filter-summary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .muzhi-batch__hscroll {
+    min-height: 8px;
+  }
+
+  .muzhi-batch__table-scroll {
+    min-height: 180px;
+  }
+}
+
+/* ===== Ticket 02：列表优先的紧凑顶栏与空状态 ===== */
+
+.muzhi-batch__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 1px 14px 1px;
+}
+
+.muzhi-batch__topbar-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.muzhi-batch__topbar-title h2 {
+  margin: 0;
+  overflow: hidden;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-batch__topbar .muzhi-batch__primary-action {
+  flex: none;
+}
+
+.muzhi-batch__empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 24px 14px;
+  padding: 28px 20px;
+  border: 1px dashed var(--muzhi-border);
+  border-radius: 12px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  text-align: center;
+}
+
+.muzhi-batch__empty-card h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.muzhi-batch__empty-card p {
+  margin: 0;
+  max-width: 34em;
+  color: var(--muzhi-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.muzhi-batch__dialog .muzhi-batch__form {
+  margin: 0;
+}
+
+/* ===== Ticket 03：解析并加入列表 Dialog（Dialog A） ===== */
+
+.muzhi-batch__parse-dialog {
+  max-width: 560px;
+}
+
+.muzhi-batch__multilink-hint {
+  margin-top: -4px;
+}
+
+.muzhi-batch__parse-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.muzhi-batch__parse-progress progress {
+  flex: 1;
+  min-width: 0;
+}
+
+.muzhi-batch__append-summary {
+  margin: 8px 0 0;
+  color: var(--muzhi-accent-strong);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===== Ticket 05：调整列 Dialog ===== */
+
+.muzhi-batch__column-settings {
+  max-width: 480px;
+}
+
+.muzhi-batch__column-order {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.muzhi-batch__column-order-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 4px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-batch__column-order-item[draggable="true"] {
+  cursor: grab;
+}
+
+.muzhi-batch__column-order-item:focus-within {
+  border-color: var(--muzhi-accent);
+}
+
+.muzhi-batch__column-drag {
+  flex: none;
+  color: var(--muzhi-muted);
+  cursor: grab;
+  font-size: 14px;
+  user-select: none;
+}
+
+.muzhi-batch__column-order-item strong {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-batch__column-visible {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.muzhi-batch__column-locked {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.muzhi-batch__column-move {
+  display: inline-flex;
+  gap: 4px;
+  flex: none;
+}
+
+.muzhi-batch__column-move button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.muzhi-batch__column-move button:disabled {
+  color: var(--muzhi-muted);
+  cursor: default;
+  opacity: 0.5;
+}
+
+.muzhi-batch__column-move button:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-batch__column-settings-open {
+  margin-left: 4px;
+}
+
+/* ===== Ticket 07：共享生命周期列表 primitive ===== */
+
+.muzhi-lifecycle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.muzhi-lifecycle__search {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-lifecycle__search input {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  font: inherit;
+}
+
+.muzhi-lifecycle__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.muzhi-lifecycle__summary p {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-lifecycle__selection-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.muzhi-lifecycle__selection-toolbar button,
+.muzhi-lifecycle__summary button {
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.muzhi-lifecycle__selection-toolbar button:disabled,
+.muzhi-lifecycle__summary button:disabled {
+  color: var(--muzhi-muted);
+  cursor: default;
+  opacity: 0.6;
+}
+
+.muzhi-lifecycle__empty {
+  margin: 0;
+  padding: 18px 10px;
+  color: var(--muzhi-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.muzhi-lifecycle__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.muzhi-lifecycle__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-lifecycle__row.is-selecting {
+  border-color: var(--muzhi-accent);
+}
+
+.muzhi-lifecycle__select {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  color: var(--muzhi-text);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.muzhi-lifecycle__select strong {
+  overflow: hidden;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-lifecycle__select small {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-lifecycle__state-slot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--muzhi-border);
+}
+
+.muzhi-lifecycle__state-slot.is-running {
+  background: var(--muzhi-accent);
+}
+
+/* 批量获取字幕对话框：语音转录语言作用域卡片式选项（Ticket 10 重设计）。
+   选项为可点击卡片：边框 + 圆角 + 选中高亮，与项目按钮/卡片风格统一。 */
+.muzhi-batch__acquire-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+/* 「按对应视频项设置」带说明文字，跨整行。 */
+.muzhi-batch__acquire-options
+  .muzhi-batch__acquire-option:has(input[value="item"]) {
+  grid-column: 1 / -1;
+}
+
+.muzhi-batch__acquire-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  transition:
+    border-color 120ms ease,
+    background 120ms ease;
+}
+
+.muzhi-batch__acquire-option:hover {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-batch__acquire-option:has(input:checked) {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-batch__acquire-option:has(input:disabled) {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* 隐藏原生 radio 圆点（卡片选中态已足够表达），保留可访问性。 */
+.muzhi-batch__acquire-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.muzhi-batch__acquire-option-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  text-align: center;
+}
+
+.muzhi-batch__acquire-option-body strong {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--muzhi-text);
+}
+
+.muzhi-batch__acquire-option-body small {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--muzhi-muted);
+}

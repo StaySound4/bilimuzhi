@@ -1,0 +1,28 @@
+{
+  "file": "settings-rename-light-w520-abc1234.png",
+  "sha256": "b7e3ba6847d45a0798161c2a30090195f3bb71b0409661005ca60ff0c2a07ec1",
+  "commit": "abc1234",
+  "surface": "settings",
+  "state": "rename",
+  "theme": "light",
+  "viewport": "520x900",
+  "deviceScaleFactor": 1,
+  "scenarioId": "settings-rename",
+  "activeTab": "settings",
+  "interactionStep": 0,
+  "themeAttribute": {
+    "name": "data-theme",
+    "value": "light"
+  },
+  "computedStyles": {
+    "canvas": "#f6f8fb",
+    "background": "#ffffff",
+    "text": "#172033",
+    "accent": "#1769e8"
+  },
+  "scenarioCounts": {
+    "profiles": 1
+  },
+  "url": "chrome-extension://abcdefghijklmnopqrstuvwxyzabcdef/settings.html",
+  "capturedAt": "2026-08-11T10:00:00.000Z"
+}

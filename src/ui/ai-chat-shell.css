@@ -1,0 +1,2374 @@
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.migration-gate {
+  --muzhi-accent-strong: #0e4da9;
+  --muzhi-accent-soft: #e4efff;
+  --muzhi-border: #d0d5dd;
+  --muzhi-danger: #b42318;
+  --muzhi-danger-soft: #fef0ee;
+  --muzhi-focus: #0b6fff;
+  --muzhi-muted: #667085;
+  --muzhi-panel: #ffffff;
+  --muzhi-panel-subtle: #f0f2f4;
+  --muzhi-text: #17202a;
+  --muzhi-warning: #9a5b00;
+  --muzhi-warning-soft: #fff4df;
+  --muzhi-surface-canvas: #f6f7f8;
+  --muzhi-surface-1: var(--muzhi-panel);
+  --muzhi-surface-2: var(--muzhi-panel-subtle);
+  --muzhi-surface-subtle: var(--muzhi-panel-subtle);
+  --muzhi-surface-sidebar: var(--muzhi-panel);
+  --muzhi-surface-hover: var(--muzhi-panel-subtle);
+  --muzhi-surface-selected: var(--muzhi-accent-soft);
+  --muzhi-text-primary: var(--muzhi-text);
+  --muzhi-text-secondary: var(--muzhi-muted);
+  --muzhi-text-tertiary: var(--muzhi-muted);
+  --muzhi-ai-accent: var(--muzhi-accent-strong);
+  --muzhi-ai-soft: var(--muzhi-accent-soft);
+  --muzhi-on-accent: #ffffff;
+  --muzhi-border-strong: var(--muzhi-border);
+  --muzhi-surface: var(--muzhi-panel);
+  --muzhi-text-muted: var(--muzhi-muted);
+  --muzhi-warning-border: var(--muzhi-border);
+
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 18px;
+  color: var(--muzhi-text);
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      var(--muzhi-accent-soft),
+      transparent 34%
+    ),
+    var(--muzhi-surface-canvas);
+}
+
+.migration-gate__card {
+  width: min(100%, 520px);
+  display: grid;
+  gap: 14px;
+  padding: 26px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--muzhi-panel) 94%, transparent);
+  box-shadow: 0 24px 70px rgb(0 0 0 / 16%);
+}
+
+.migration-gate__card h1,
+.migration-gate__card p,
+.migration-gate__card ul {
+  margin: 0;
+}
+
+.migration-gate__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.migration-gate__icon span {
+  width: 20px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  box-shadow:
+    7px 5px 0 -3px var(--muzhi-panel),
+    7px 5px 0 -1px currentColor;
+}
+
+.migration-gate__icon--blocked {
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+}
+
+.migration-gate__eyebrow {
+  color: var(--muzhi-accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.migration-gate__lead,
+.migration-gate__details {
+  color: var(--muzhi-muted);
+  line-height: 1.7;
+}
+
+.migration-gate__summary {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.migration-gate__summary span {
+  color: var(--muzhi-muted);
+  font-size: 13px;
+}
+
+.migration-gate__details {
+  display: grid;
+  gap: 5px;
+  padding-left: 20px;
+}
+
+.migration-gate__warning,
+.migration-gate__notice {
+  padding: 12px;
+  border-radius: 10px;
+  line-height: 1.65;
+}
+
+.migration-gate__warning {
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+}
+
+.migration-gate__notice {
+  border: 1px solid var(--muzhi-border);
+  background: var(--muzhi-panel-subtle);
+}
+
+.migration-gate__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.migration-gate__actions button {
+  min-height: 42px;
+  flex: 1;
+  padding: 0 14px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+}
+
+.migration-gate__actions button:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+.migration-gate__actions button:not(:disabled):hover {
+  border-color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.migration-gate__actions button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--muzhi-focus) 34%, transparent);
+  outline-offset: 2px;
+}
+
+.migration-gate__actions .migration-gate__confirm {
+  border-color: var(--muzhi-danger);
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+}
+
+.migration-gate__actions .migration-gate__confirm:not(:disabled):hover {
+  border-color: var(--muzhi-danger);
+  color: #ffffff;
+  background: var(--muzhi-danger);
+}
+
+@media (prefers-color-scheme: dark) {
+  .migration-gate {
+    --muzhi-accent-strong: #84b7ff;
+    --muzhi-accent-soft: #173c6f;
+    --muzhi-border: #394657;
+    --muzhi-danger: #ff9b91;
+    --muzhi-danger-soft: #4a2423;
+    --muzhi-focus: #84b7ff;
+    --muzhi-muted: #aeb9c8;
+    --muzhi-panel: #1b2530;
+    --muzhi-panel-subtle: #25313e;
+    --muzhi-text: #f4f7fb;
+    --muzhi-warning: #ffd188;
+    --muzhi-warning-soft: #493100;
+    --muzhi-surface-canvas: #111820;
+    --muzhi-surface-1: var(--muzhi-panel);
+    --muzhi-surface-2: var(--muzhi-panel-subtle);
+    --muzhi-surface-subtle: var(--muzhi-panel-subtle);
+    --muzhi-surface-sidebar: var(--muzhi-panel);
+    --muzhi-surface-hover: var(--muzhi-panel-subtle);
+    --muzhi-surface-selected: var(--muzhi-accent-soft);
+    --muzhi-text-primary: var(--muzhi-text);
+    --muzhi-text-secondary: var(--muzhi-muted);
+    --muzhi-text-tertiary: var(--muzhi-muted);
+    --muzhi-ai-accent: var(--muzhi-accent-strong);
+    --muzhi-ai-soft: var(--muzhi-accent-soft);
+    --muzhi-on-accent: #0d1520;
+    --muzhi-border-strong: var(--muzhi-border);
+    --muzhi-surface: var(--muzhi-panel);
+    --muzhi-text-muted: var(--muzhi-muted);
+    --muzhi-warning-border: var(--muzhi-border);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 0;
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.muzhi-button {
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 14px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text-primary, var(--muzhi-text));
+  background: var(--muzhi-panel);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease,
+    opacity 120ms ease;
+}
+.muzhi-button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+.muzhi-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.muzhi-button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--muzhi-focus) 34%, transparent);
+  outline-offset: 2px;
+}
+
+.muzhi-btn {
+  --muzhi-btn-height: 34px;
+  --muzhi-btn-padding: 0 12px;
+  min-height: var(--muzhi-btn-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: var(--muzhi-btn-padding);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--muzhi-text-primary, var(--muzhi-text));
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease,
+    opacity 120ms ease;
+}
+.muzhi-btn--sm {
+  --muzhi-btn-height: 30px;
+  --muzhi-btn-padding: 0 10px;
+  font-size: 12px;
+}
+.muzhi-btn--lg {
+  --muzhi-btn-height: 42px;
+  --muzhi-btn-padding: 0 16px;
+  font-size: 14px;
+}
+.muzhi-btn--primary {
+  color: var(--muzhi-on-accent);
+  background: var(--muzhi-accent);
+  font-weight: 600;
+}
+.muzhi-btn--secondary {
+  border-color: var(--muzhi-border);
+  background: var(--muzhi-surface-1, var(--muzhi-panel));
+}
+.muzhi-btn--ghost {
+  color: var(--muzhi-text-secondary, var(--muzhi-muted));
+}
+.muzhi-btn--destructive {
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+}
+.muzhi-btn--icon {
+  width: var(--muzhi-btn-height);
+  padding: 0;
+}
+.muzhi-btn:hover:not(:disabled) {
+  background: var(--muzhi-surface-hover, var(--muzhi-panel-subtle));
+}
+.muzhi-btn--primary:hover:not(:disabled) {
+  color: var(--muzhi-on-accent);
+  background: var(--muzhi-accent-strong);
+}
+.muzhi-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.muzhi-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--muzhi-focus) 34%, transparent);
+  outline-offset: 2px;
+}
+.muzhi-btn:disabled,
+.muzhi-btn[aria-busy="true"] {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+.muzhi-btn[aria-busy="true"] {
+  cursor: progress;
+}
+
+.muzhi-app {
+  --muzhi-accent: #3867e8;
+  --muzhi-accent-strong: #3867e8;
+  --muzhi-accent-soft: #eaf0ff;
+  --muzhi-canvas: #f6f8fb;
+  --muzhi-danger: #c53a42;
+  --muzhi-danger-soft: color-mix(in srgb, #c53a42 10%, #ffffff);
+  --muzhi-focus: #3867e8;
+  --muzhi-muted: #52525b;
+  --muzhi-panel: #ffffff;
+  --muzhi-panel-subtle: #fafafa;
+  --muzhi-success: #16803c;
+  --muzhi-success-soft: color-mix(in srgb, #16803c 10%, #ffffff);
+  --muzhi-text: #18181b;
+  --muzhi-warning: #a16207;
+  --muzhi-warning-soft: color-mix(in srgb, #a16207 10%, #ffffff);
+  --muzhi-border: #d8dee8;
+  --muzhi-surface-canvas: var(--muzhi-canvas);
+  --muzhi-surface-1: var(--muzhi-panel);
+  --muzhi-surface-2: var(--muzhi-panel-subtle);
+  --muzhi-surface-subtle: var(--muzhi-panel-subtle);
+  --muzhi-surface-sidebar: #f1f4f8;
+  --muzhi-surface-hover: #f0f2f5;
+  --muzhi-surface-selected: var(--muzhi-accent-soft);
+  --muzhi-text-primary: var(--muzhi-text);
+  --muzhi-text-secondary: var(--muzhi-muted);
+  --muzhi-text-tertiary: #71717a;
+  --muzhi-ai-accent: #6554c0;
+  --muzhi-ai-soft: color-mix(in srgb, #6554c0 10%, #ffffff);
+  --muzhi-on-accent: #ffffff;
+  --muzhi-border-strong: #b7c0ce;
+  --muzhi-surface: var(--muzhi-panel);
+  --muzhi-text-muted: var(--muzhi-muted);
+  --muzhi-warning-border: var(--muzhi-border);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--muzhi-text);
+  background: var(--muzhi-canvas);
+  container-type: inline-size;
+}
+
+.muzhi-app[data-theme="dark"] {
+  --muzhi-accent: #7ea2ff;
+  --muzhi-accent-strong: #7ea2ff;
+  --muzhi-accent-soft: #1b2747;
+  --muzhi-canvas: #0e1116;
+  --muzhi-danger: #ff6b74;
+  --muzhi-danger-soft: color-mix(in srgb, #ff6b74 14%, #151a22);
+  --muzhi-muted: #9aa6b2;
+  --muzhi-panel: #151a22;
+  --muzhi-panel-subtle: #1b2230;
+  --muzhi-success: #30a46c;
+  --muzhi-success-soft: color-mix(in srgb, #30a46c 14%, #151a22);
+  --muzhi-text: #f2f5f8;
+  --muzhi-warning: #f2b84b;
+  --muzhi-warning-soft: color-mix(in srgb, #f2b84b 14%, #151a22);
+  --muzhi-border: #313a49;
+  --muzhi-surface-canvas: var(--muzhi-canvas);
+  --muzhi-surface-1: var(--muzhi-panel);
+  --muzhi-surface-2: var(--muzhi-panel-subtle);
+  --muzhi-surface-subtle: var(--muzhi-panel-subtle);
+  --muzhi-surface-sidebar: #0d0d10;
+  --muzhi-surface-hover: #202836;
+  --muzhi-surface-selected: var(--muzhi-accent-soft);
+  --muzhi-text-primary: var(--muzhi-text);
+  --muzhi-text-secondary: var(--muzhi-muted);
+  --muzhi-text-tertiary: #7d8897;
+  --muzhi-ai-accent: #a78bfa;
+  --muzhi-ai-soft: color-mix(in srgb, #a78bfa 14%, #151a22);
+  --muzhi-on-accent: #0d1520;
+  --muzhi-border-strong: #465164;
+  --muzhi-surface: var(--muzhi-panel);
+  --muzhi-text-muted: var(--muzhi-muted);
+  --muzhi-warning-border: var(--muzhi-border);
+}
+
+@media (prefers-color-scheme: dark) {
+  .muzhi-app[data-theme="system"] {
+    --muzhi-accent: #7ea2ff;
+    --muzhi-accent-strong: #7ea2ff;
+    --muzhi-accent-soft: #1b2747;
+    --muzhi-canvas: #0e1116;
+    --muzhi-danger: #ff6b74;
+    --muzhi-danger-soft: color-mix(in srgb, #ff6b74 14%, #151a22);
+    --muzhi-muted: #9aa6b2;
+    --muzhi-panel: #151a22;
+    --muzhi-panel-subtle: #1b2230;
+    --muzhi-success: #30a46c;
+    --muzhi-success-soft: color-mix(in srgb, #30a46c 14%, #151a22);
+    --muzhi-text: #f2f5f8;
+    --muzhi-warning: #f2b84b;
+    --muzhi-warning-soft: color-mix(in srgb, #f2b84b 14%, #151a22);
+    --muzhi-border: #313a49;
+    --muzhi-surface-canvas: var(--muzhi-canvas);
+    --muzhi-surface-1: var(--muzhi-panel);
+    --muzhi-surface-2: var(--muzhi-panel-subtle);
+    --muzhi-surface-subtle: var(--muzhi-panel-subtle);
+    --muzhi-surface-sidebar: #0d0d10;
+    --muzhi-surface-hover: #202836;
+    --muzhi-surface-selected: var(--muzhi-accent-soft);
+    --muzhi-text-primary: var(--muzhi-text);
+    --muzhi-text-secondary: var(--muzhi-muted);
+    --muzhi-text-tertiary: #7d8897;
+    --muzhi-ai-accent: #a78bfa;
+    --muzhi-ai-soft: color-mix(in srgb, #a78bfa 14%, #151a22);
+    --muzhi-on-accent: #0d1520;
+    --muzhi-border-strong: #465164;
+    --muzhi-surface: var(--muzhi-panel);
+    --muzhi-text-muted: var(--muzhi-muted);
+    --muzhi-warning-border: var(--muzhi-border);
+  }
+}
+
+.muzhi-app__layout {
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100dvh;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.muzhi-app,
+.muzhi-app * {
+  scrollbar-color: var(--muzhi-border) var(--muzhi-panel);
+}
+
+.muzhi-app ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.muzhi-app ::-webkit-scrollbar-thumb {
+  border: 2px solid var(--muzhi-panel);
+  border-radius: 999px;
+  background: var(--muzhi-border);
+}
+
+.muzhi-app ::-webkit-scrollbar-track {
+  background: var(--muzhi-panel);
+}
+
+.session-drawer__toggle {
+  position: fixed;
+  z-index: 30;
+  top: 50%;
+  left: 0;
+  width: 28px;
+  min-height: 58px;
+  padding: 0;
+  border: 1px solid var(--muzhi-border);
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.session-drawer__overlay {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  border: 0;
+  visibility: hidden;
+  opacity: 0;
+  background: rgb(0 0 0 / 45%);
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    visibility 160ms ease;
+}
+
+.session-drawer__overlay.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.session-drawer__panel {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 50;
+  inset: 0 auto 0 0;
+  width: min(88vw, 340px);
+  min-width: min(280px, 100vw);
+  padding: 16px;
+  overflow-x: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-right: 1px solid var(--muzhi-border);
+  visibility: hidden;
+  opacity: 0;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  box-shadow: 8px 0 24px rgb(0 0 0 / 18%);
+  transform: translateX(-100%);
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease,
+    visibility 180ms ease;
+}
+
+.session-drawer__panel.is-open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.session-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.session-drawer__header p,
+.session-drawer__header h2,
+.session-drawer__bind h3,
+.session-drawer__count,
+.session-drawer__empty {
+  margin: 0;
+}
+
+.session-drawer__header p,
+.session-drawer__count {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.session-drawer__header h2 {
+  margin-top: 2px;
+  font-size: 18px;
+}
+
+.session-drawer__mode-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--muzhi-border);
+}
+
+.session-drawer__mode-navigation button {
+  position: relative;
+  min-width: 0;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 0;
+  color: var(--muzhi-text-secondary);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.session-drawer__mode-navigation button::after {
+  position: absolute;
+  right: 10px;
+  bottom: -1px;
+  left: 10px;
+  height: 2px;
+  background: transparent;
+  content: "";
+}
+
+.session-drawer__mode-navigation button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.session-drawer__mode-navigation button.is-active {
+  color: var(--muzhi-accent-strong);
+  font-weight: 600;
+}
+.session-drawer__mode-navigation button.is-active::after {
+  background: var(--muzhi-accent);
+}
+
+.session-drawer__create-session {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 0;
+  min-height: 38px;
+  padding: 0 9px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.session-drawer__mode-navigation svg {
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+}
+
+.session-drawer__mode-navigation span {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.session-drawer__create-session {
+  flex: 0 0 auto;
+  width: 100%;
+  border-color: var(--muzhi-border);
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+}
+
+/* Batch 模式轻提示：常驻三步指南已由模式帮助 Dialog 取代。 */
+.session-drawer__batch-guide {
+  margin: 0;
+  padding: 0 4px 4px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.session-drawer__close {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 7px;
+  color: var(--muzhi-text);
+  background: transparent;
+  cursor: pointer;
+}
+
+.session-drawer__bind {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.session-drawer__bind h3 {
+  font-size: 14px;
+}
+
+.session-drawer__bind form,
+.session-drawer__search,
+.session-drawer__rename label {
+  display: grid;
+  gap: 5px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.session-drawer__bind input,
+.session-drawer__search input,
+.session-drawer__rename input,
+.muzhi-appearance select {
+  width: 100%;
+  min-height: 34px;
+  padding: 0 9px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 7px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+}
+
+.session-drawer__bind button,
+.session-drawer__rename button,
+.session-drawer__selection-summary > button,
+.session-drawer__selection-toolbar button,
+.session-drawer__selection-toolbar button {
+  min-height: 34px;
+  padding: 0 9px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 7px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    border-color 120ms ease,
+    color 120ms ease,
+    background-color 120ms ease;
+}
+
+.session-drawer__bind button:disabled,
+.session-drawer__rename button:disabled,
+.session-drawer__selection-summary > button:disabled,
+.session-drawer__selection-toolbar button:disabled,
+.session-drawer__selection-toolbar button:disabled {
+  color: var(--muzhi-muted);
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.session-drawer__message {
+  margin: 10px 0 0;
+  padding: 8px 9px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.session-drawer__message.is-status,
+.muzhi-shell__restore-status {
+  color: var(--muzhi-success);
+  background: var(--muzhi-success-soft);
+}
+
+.muzhi-shell__readonly-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--muzhi-warning-border, var(--muzhi-border));
+  border-radius: 10px;
+  background: var(--muzhi-warning-soft, var(--muzhi-panel-subtle));
+}
+
+.muzhi-shell__readonly-banner-copy {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muzhi-text);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-shell__readonly-banner button {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  font: inherit;
+  white-space: nowrap;
+}
+
+.muzhi-shell__readonly-banner button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-shell__action-message {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+  line-height: 1.5;
+}
+
+.muzhi-shell__action-message.is-status {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-success) 42%,
+    var(--muzhi-border)
+  );
+  color: var(--muzhi-success);
+  background: var(--muzhi-success-soft);
+}
+
+.muzhi-shell__action-message.is-error {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-danger) 42%,
+    var(--muzhi-border)
+  );
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+}
+
+.session-drawer__message.is-error,
+.subtitle-acquisition__error {
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+}
+
+.session-drawer__search {
+  margin-top: 14px;
+}
+
+.session-drawer__count {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.session-drawer__selection-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 34px;
+  margin-top: 8px;
+}
+
+.session-drawer__selection-summary > button {
+  flex: 0 0 auto;
+  min-width: 58px;
+  min-height: 30px;
+  padding-inline: 10px;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.session-drawer__selection-summary > button:hover:not(:disabled),
+.session-drawer__selection-toolbar button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.session-drawer__selection-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-height: 34px;
+  margin-top: 6px;
+}
+
+.session-drawer__selection-toolbar.is-selecting {
+  display: flex;
+  justify-content: stretch;
+  padding: 5px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.session-drawer__selection-toolbar > span {
+  flex: 1 1 auto;
+  margin: 0;
+  text-align: center;
+  color: var(--muzhi-text);
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.session-drawer__selection-toolbar button {
+  min-height: 30px;
+  padding: 0 9px;
+  white-space: nowrap;
+}
+
+.session-drawer__selection-toolbar .session-drawer__selection-all {
+  flex: 0 0 auto;
+  padding-inline: 4px;
+}
+
+.session-drawer__selection-toolbar
+  .session-drawer__batch-icon[aria-label="批量归档"] {
+  flex: 0 0 30px;
+}
+
+.session-drawer__selection-toolbar
+  .session-drawer__batch-icon[aria-label="批量删除"] {
+  flex: 0 0 30px;
+}
+
+.session-drawer__selection-toolbar .session-drawer__batch-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  min-width: 30px;
+  padding: 0;
+}
+
+.session-drawer__batch-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.session-drawer__selection-toolbar .session-drawer__batch-icon.is-danger {
+  color: var(--muzhi-danger);
+}
+
+.session-drawer__empty {
+  margin-top: 14px;
+  color: var(--muzhi-muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.session-drawer__list {
+  display: grid;
+  gap: 2px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.session-drawer__groups {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.session-drawer__group + .session-drawer__group {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--muzhi-border);
+}
+
+.session-drawer__group > h3 {
+  margin: 0 7px 5px;
+  color: var(--muzhi-text-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.session-drawer__list > li {
+  position: relative;
+  min-width: 0;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 6px;
+}
+
+.session-drawer__list > li:hover,
+.session-drawer__list > li:focus-within {
+  background: var(--muzhi-surface-hover);
+}
+
+.session-drawer__list > li.is-active {
+  background: var(--muzhi-surface-selected);
+}
+
+.session-drawer__list > li.is-active::before {
+  position: absolute;
+  inset: 6px auto 6px 0;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--muzhi-accent);
+  content: "";
+}
+
+.session-drawer__list > li.is-selected {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-accent) 72%,
+    var(--muzhi-border)
+  );
+  background: color-mix(in srgb, var(--muzhi-accent) 12%, var(--muzhi-panel));
+}
+
+.session-drawer__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 16px 32px;
+  align-items: center;
+  min-width: 0;
+}
+
+.session-drawer__row.is-selecting {
+  grid-template-columns: 24px minmax(0, 1fr) 16px;
+}
+
+.session-drawer__checkbox {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  justify-self: center;
+  accent-color: var(--muzhi-accent);
+  cursor: pointer;
+}
+
+.session-drawer__select {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 8px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+}
+
+.session-drawer__select strong {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  font-size: 13px;
+  font-weight: 560;
+}
+
+.session-drawer__state-slot {
+  width: 8px;
+  height: 8px;
+  justify-self: center;
+  border-radius: 50%;
+}
+
+.session-drawer__state-slot.is-unread {
+  background: var(--muzhi-accent);
+}
+
+.session-drawer__state-slot.is-running {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--muzhi-border);
+  border-top-color: var(--muzhi-accent);
+  animation: muzhi-session-spin 800ms linear infinite;
+}
+
+@keyframes muzhi-session-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.session-drawer__list > li[aria-selected="true"] {
+  background: var(--muzhi-surface-selected);
+}
+
+.session-drawer__rename,
+.session-drawer__rename > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.session-drawer__rename {
+  display: grid;
+  gap: 8px;
+  margin: 6px 3px 3px;
+  padding: 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel);
+}
+
+.session-drawer__list {
+  min-height: 0;
+}
+
+.session-drawer__utilities {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(38px, 1fr));
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--muzhi-border);
+}
+
+.session-drawer__utilities button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+  cursor: pointer;
+}
+
+.session-drawer__utilities svg {
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+}
+
+.session-drawer__utilities button:hover {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.session-drawer__toggle:focus-visible,
+.session-drawer__close:focus-visible,
+.session-drawer__mode-navigation button:focus-visible,
+.session-drawer__create-session:focus-visible,
+.session-drawer__bind button:focus-visible,
+.session-drawer__bind input:focus-visible,
+.session-drawer__search input:focus-visible,
+.session-drawer__select:focus-visible,
+.session-drawer__checkbox:focus-visible,
+.session-drawer__rename button:focus-visible,
+.session-drawer__rename input:focus-visible,
+.session-drawer__selection-summary > button:focus-visible,
+.session-drawer__selection-toolbar button:focus-visible,
+.session-drawer__utilities button:focus-visible,
+.muzhi-appearance select:focus-visible,
+.muzhi-shell__tabs button:focus-visible,
+.subtitle-timeline__toolbar button:focus-visible,
+.subtitle-timeline__toolbar input:focus-visible,
+.subtitle-timeline__exports button:focus-visible,
+.subtitle-timeline__list li > button:focus-visible,
+.subtitle-acquisition button:focus-visible,
+.subtitle-acquisition input:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-conversation-splitter {
+  display: none;
+}
+
+.muzhi-shell {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.muzhi-shell__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.muzhi-shell__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.muzhi-shell__brand-logo {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.muzhi-shell__github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 999px;
+  color: var(--muzhi-muted);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.muzhi-shell__github:hover,
+.muzhi-shell__github:focus-visible {
+  color: var(--muzhi-accent-strong);
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-panel-subtle);
+}
+.muzhi-shell__github:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-shell__github-star {
+  min-width: 0;
+  max-width: 200px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muzhi-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-shell__header h1,
+.muzhi-shell__panel h2,
+.muzhi-shell__eyebrow,
+.muzhi-shell__placeholder-label {
+  margin: 0;
+}
+
+.muzhi-shell__header h1 {
+  font-size: 19px;
+}
+
+.muzhi-shell__eyebrow,
+.muzhi-shell__status,
+.muzhi-shell__placeholder-label {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-shell__help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 999px;
+  color: var(--muzhi-muted);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+.muzhi-shell__help:hover,
+.muzhi-shell__help:focus-visible {
+  color: var(--muzhi-accent-strong);
+  border-color: var(--muzhi-accent);
+}
+
+/* 标题 + 问号帮助按钮同行容器(归档/回收站统一贴字布局) */
+.muzhi-title-help {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.muzhi-shell__header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
+.muzhi-shell__header-actions > button {
+  min-height: 36px;
+  flex: 0 0 auto;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.muzhi-appearance select {
+  min-height: 36px;
+  min-width: 0;
+  max-width: min(48vw, 220px);
+  flex: 0 1 auto;
+  padding: 0 30px 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.muzhi-shell__header-actions > button:hover {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-shell__session-creator {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 14px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-shell__session-creator-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.muzhi-shell__session-creator-heading p,
+.muzhi-shell__session-creator-heading h2 {
+  margin: 0;
+}
+
+.muzhi-shell__session-creator-heading p {
+  color: var(--muzhi-muted);
+  font-size: 11px;
+}
+
+.muzhi-shell__session-creator-heading h2 {
+  margin-top: 2px;
+  font-size: 15px;
+}
+
+.muzhi-shell__session-creator button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+  cursor: pointer;
+}
+
+.muzhi-shell__session-creator button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.muzhi-shell__session-creator form {
+  display: grid;
+  gap: 5px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-shell__session-creator form > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.muzhi-shell__session-creator input {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+}
+
+.muzhi-shell__session-creator input:focus-visible,
+.muzhi-shell__session-creator button:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-shell__binding-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 11px 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 14px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-shell__binding-copy {
+  min-width: 0;
+}
+
+.muzhi-shell__binding-copy h2,
+.muzhi-shell__binding-copy p {
+  margin: 0;
+}
+
+.muzhi-shell__binding-copy h2 {
+  margin-top: 2px;
+  overflow: hidden;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-shell__binding-eyebrow {
+  color: var(--muzhi-muted);
+  font-size: 11px;
+}
+
+.muzhi-shell__binding-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin-top: 5px !important;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.muzhi-shell__binding-meta span + span::before {
+  margin-right: 10px;
+  color: var(--muzhi-border-strong);
+  content: "·";
+}
+
+.muzhi-shell__binding-action,
+.muzhi-shell__acquisition-heading button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+  cursor: pointer;
+  font: inherit;
+}
+
+.muzhi-shell__binding-action:disabled {
+  color: var(--muzhi-muted);
+  cursor: not-allowed;
+  opacity: 0.66;
+}
+
+.muzhi-appearance {
+  display: flex;
+  gap: 6px;
+  min-width: 0;
+}
+
+.muzhi-appearance label {
+  display: grid;
+  gap: 3px;
+  color: var(--muzhi-muted);
+  font-size: 10px;
+}
+
+.muzhi-appearance select {
+  min-height: 28px;
+  max-width: 88px;
+  padding: 0 5px;
+  font-size: 11px;
+}
+
+.muzhi-shell__restore-status {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  border: 1px solid var(--muzhi-success);
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.muzhi-shell__tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--muzhi-border);
+}
+
+/* 唯一共享 indicator：位置由 --muzhi-tab-index 驱动（0..3），
+   transform 平移 100% 每格；normal 下 220ms 连续移动，reduced-motion 立即落位。 */
+.muzhi-shell__tab-indicator {
+  position: absolute;
+  z-index: 1;
+  bottom: -1px;
+  left: 0;
+  width: calc(100% / 4);
+  height: 2px;
+  background: var(--muzhi-accent);
+  transform: translateX(calc(var(--muzhi-tab-index, 0) * 100%));
+  transition: transform 220ms cubic-bezier(0.22, 0.8, 0.24, 1);
+  pointer-events: none;
+}
+
+.muzhi-shell__tabs button {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0 8px;
+  border: 0;
+  color: var(--muzhi-text-secondary);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.muzhi-shell__tabs button[aria-selected="true"] {
+  color: var(--muzhi-text-primary);
+  font-weight: 600;
+}
+
+.muzhi-shell__tabs button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--muzhi-focus) 34%, transparent);
+  outline-offset: -3px;
+}
+
+.muzhi-shell__panel {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.muzhi-shell__panel h2 {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.muzhi-shell__panel p:last-child {
+  line-height: 1.6;
+}
+
+.muzhi-shell__panel > p:last-child {
+  color: var(--muzhi-muted);
+}
+
+.muzhi-shell__panel .muzhi-markdown p:last-child {
+  color: var(--muzhi-text);
+}
+
+.subtitle-timeline {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.subtitle-timeline__toolbar {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+
+.subtitle-timeline__toolbar label {
+  display: grid;
+  flex: 1;
+  gap: 4px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.subtitle-timeline__toolbar input,
+.subtitle-timeline__toolbar button,
+.subtitle-timeline__exports button,
+.subtitle-acquisition button {
+  min-height: 36px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+}
+
+.subtitle-timeline__toolbar button:hover:not(:disabled),
+.subtitle-timeline__exports button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.subtitle-timeline__empty {
+  display: grid;
+  place-content: center;
+  min-height: 132px;
+  padding: 20px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-muted);
+  text-align: center;
+  background: var(--muzhi-panel-subtle);
+}
+
+.subtitle-timeline__empty strong {
+  color: var(--muzhi-text);
+  font-size: 15px;
+}
+
+.subtitle-timeline__empty p {
+  max-width: 32rem;
+  margin: 6px 0 0;
+  line-height: 1.6;
+}
+
+.subtitle-timeline__toolbar button[aria-pressed="true"] {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.subtitle-timeline__toolbar input {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.subtitle-timeline__toolbar button:disabled,
+.subtitle-timeline__exports button:disabled,
+.subtitle-acquisition button:disabled {
+  color: var(--muzhi-muted);
+  cursor: not-allowed;
+}
+
+.subtitle-timeline__locate-status {
+  margin: 8px 0 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.subtitle-timeline__count {
+  margin: 10px 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.subtitle-timeline__exports {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.subtitle-timeline__exports button,
+.subtitle-acquisition button {
+  padding: 0 10px;
+  cursor: pointer;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.subtitle-timeline__viewport {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  border-block: 1px solid var(--muzhi-border);
+  scroll-behavior: smooth;
+}
+
+.subtitle-timeline__viewport.is-synced {
+  overscroll-behavior: none;
+  scrollbar-width: none;
+}
+
+.subtitle-timeline__viewport.is-synced::-webkit-scrollbar {
+  display: none;
+}
+
+.subtitle-timeline__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subtitle-timeline__list li {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 4px;
+}
+
+.subtitle-timeline__list li[aria-current="true"] {
+  z-index: 1;
+}
+
+.subtitle-timeline__list li > button,
+.subtitle-timeline__list li > div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 24px minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 12px 0 16px;
+  border: 0;
+  border-radius: 0;
+  color: var(--muzhi-text);
+  text-align: left;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Ticket 10：rail 为显式结构列（非绝对定位魔数），
+   connector 连续、node 居中；时间右对齐 tabular。 */
+.subtitle-timeline__list li > button time,
+.subtitle-timeline__list li > div > span:first-child {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--muzhi-muted);
+}
+
+.subtitle-timeline__rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.subtitle-timeline__rail::before {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--muzhi-border);
+  content: "";
+}
+
+.subtitle-timeline__node {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--muzhi-border);
+  background: var(--muzhi-panel);
+}
+
+.subtitle-timeline__list li[aria-current="true"] > button,
+.subtitle-timeline__list li[aria-current="true"] > div {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-accent-soft);
+}
+
+.subtitle-timeline__list li > button:hover,
+.subtitle-timeline__list li > button:focus-visible {
+  background: var(--muzhi-surface-hover);
+}
+
+.subtitle-timeline__list
+  li[aria-current="true"]
+  .subtitle-timeline__rail::before,
+.subtitle-timeline__list li[aria-current="true"] .subtitle-timeline__node {
+  background: var(--muzhi-accent);
+  border-color: var(--muzhi-accent);
+}
+
+.subtitle-timeline__list li > button {
+  cursor: pointer;
+}
+
+.subtitle-timeline__list time,
+.subtitle-timeline__list li > div > span:first-child {
+  color: var(--muzhi-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.muzhi-shell__timeline-stack {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  flex: 1 1 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.muzhi-shell__acquisition-selection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.muzhi-shell__acquisition-heading {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.muzhi-shell__acquisition-heading h2,
+.muzhi-shell__acquisition-heading p {
+  margin: 0;
+}
+
+.muzhi-shell__acquisition-heading h2 {
+  margin-block: 2px;
+  font-size: 16px;
+}
+
+.muzhi-shell__acquisition-heading p {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.muzhi-shell__acquisition-selection > .subtitle-acquisition,
+.muzhi-shell__acquisition-selection > .speech-acquisition {
+  align-content: start;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.subtitle-acquisition,
+.speech-acquisition {
+  display: grid;
+  gap: 12px;
+}
+
+.subtitle-acquisition h2,
+.subtitle-acquisition p,
+.subtitle-acquisition fieldset,
+.speech-acquisition h2,
+.speech-acquisition p {
+  margin: 0;
+}
+
+.speech-acquisition label {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.speech-acquisition select,
+.speech-acquisition button {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+}
+
+/* 窄侧栏中间宽度区间：下拉收缩到面板宽度，长文案换行，不越过卡片边界。 */
+.speech-acquisition select {
+  width: 100%;
+}
+
+.speech-acquisition p,
+.speech-acquisition h2 {
+  overflow-wrap: anywhere;
+}
+
+.speech-acquisition button {
+  cursor: pointer;
+}
+
+.speech-acquisition button:disabled {
+  color: var(--muzhi-muted);
+  cursor: not-allowed;
+}
+
+.subtitle-acquisition__eyebrow {
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.subtitle-acquisition fieldset {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+}
+
+.subtitle-acquisition legend {
+  padding: 0 4px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+}
+
+.subtitle-acquisition__track {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.subtitle-acquisition__track span {
+  display: grid;
+  gap: 2px;
+}
+
+.subtitle-acquisition__track small {
+  color: var(--muzhi-muted);
+}
+
+.subtitle-acquisition__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subtitle-acquisition__error {
+  padding: 9px;
+  border-radius: 8px;
+}
+
+.subtitle-acquisition--confirmation {
+  padding: 14px;
+  border: 1px solid
+    color-mix(in srgb, var(--muzhi-danger) 52%, var(--muzhi-border));
+  border-radius: 12px;
+  background: color-mix(
+    in srgb,
+    var(--muzhi-danger-soft) 58%,
+    var(--muzhi-panel)
+  );
+  box-shadow: 0 10px 24px rgb(0 0 0 / 10%);
+}
+
+.subtitle-acquisition__warning {
+  color: var(--muzhi-danger);
+  line-height: 1.65;
+}
+
+.subtitle-acquisition .subtitle-acquisition__danger-action,
+.speech-acquisition .subtitle-acquisition__danger-action {
+  border-color: var(--muzhi-danger);
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+}
+
+@container (min-width: 620px) {
+  .muzhi-app--with-sessions .muzhi-app__layout {
+    display: grid;
+    grid-template-columns:
+      minmax(224px, min(var(--muzhi-conversation-pane-width), 360px, 42cqi))
+      12px minmax(320px, 1fr);
+  }
+
+  .muzhi-app--with-sessions .session-drawer {
+    display: block;
+  }
+
+  .muzhi-app--with-sessions .session-drawer__panel {
+    position: sticky;
+    z-index: auto;
+    grid-column: 1;
+    width: auto;
+    min-width: 224px;
+    height: 100%;
+    max-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 16px;
+    border-right: 0;
+    visibility: visible;
+    opacity: 1;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .muzhi-app--with-sessions .session-drawer__toggle,
+  .muzhi-app--with-sessions .session-drawer__overlay,
+  .muzhi-app--with-sessions .session-drawer__close {
+    display: none;
+  }
+
+  .muzhi-app--with-sessions .muzhi-conversation-splitter {
+    position: relative;
+    display: block;
+    grid-column: 2;
+    min-height: 100%;
+    cursor: col-resize;
+    touch-action: none;
+  }
+
+  .muzhi-app--with-sessions .muzhi-conversation-splitter::after {
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 5px;
+    width: 2px;
+    border-radius: 999px;
+    background: var(--muzhi-accent);
+    content: "";
+    opacity: 0;
+    transition: opacity 120ms ease;
+  }
+
+  .muzhi-app--with-sessions .muzhi-conversation-splitter:hover::after,
+  .muzhi-app--with-sessions .muzhi-conversation-splitter:active::after {
+    opacity: 1;
+  }
+
+  .muzhi-app--with-sessions .muzhi-shell {
+    grid-column: 3;
+    padding: 20px;
+  }
+
+  .muzhi-app--with-sessions .muzhi-shell__header {
+    padding-left: 0;
+  }
+}
+
+@container (max-width: 619px) {
+  .muzhi-shell__brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .muzhi-shell__brand {
+    flex-basis: 100%;
+  }
+
+  .muzhi-shell__header-actions {
+    flex-basis: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .muzhi-shell__status {
+    display: none;
+  }
+
+  .muzhi-shell__session-creator-heading,
+  .muzhi-shell__session-creator form > div {
+    align-items: stretch;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .muzhi-shell__session-creator-heading {
+    display: grid;
+  }
+
+  .muzhi-shell__binding-header,
+  .muzhi-shell__acquisition-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .muzhi-shell__binding-action,
+  .muzhi-shell__acquisition-heading button {
+    width: 100%;
+  }
+
+  .muzhi-shell__acquisition-selection {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .muzhi-shell__acquisition-heading {
+    grid-column: 1;
+  }
+}
+
+@container (max-width: 521px) {
+  .subtitle-timeline__toolbar {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .subtitle-timeline__toolbar label {
+    flex-basis: 100%;
+  }
+
+  .subtitle-timeline__toolbar button {
+    flex: 1 1 140px;
+  }
+
+  .subtitle-timeline__exports {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/*
+ * Rows are absolutely positioned in a fixed-height virtualised list, so any
+ * text taller than one row spills over its neighbour. Speech-recognised lines
+ * are far longer than Bilibili's own, which is how transcribed subtitles ended
+ * up overlapping. The row clips, and the full line stays available on hover.
+ */
+.subtitle-timeline__list li {
+  overflow: hidden;
+}
+
+.subtitle-timeline__list li > button > span:last-child,
+.subtitle-timeline__list li > div > span:last-child {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.subtitle-timeline__archive-dialog {
+  background: var(--muzhi-panel);
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 18%);
+  display: grid;
+  gap: 12px;
+  inset: 50% auto auto 50%;
+  max-inline-size: min(360px, calc(100vw - 32px));
+  padding: 18px;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: 80;
+}
+
+.subtitle-timeline__archive-dialog h3,
+.subtitle-timeline__archive-dialog p {
+  margin: 0;
+}
+
+.subtitle-timeline__archive-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.muzhi-shell__creator-hint {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.subtitle-timeline__export-popover {
+  position: absolute;
+  z-index: 80;
+  top: calc(100% + 6px);
+  right: auto;
+  left: 0;
+  display: grid;
+  gap: 10px;
+  min-width: 220px;
+  padding: 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 20%);
+}
+
+.subtitle-timeline__export-popover h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.subtitle-timeline__export-popover label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.subtitle-timeline__export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subtitle-timeline__export-actions button {
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel-subtle);
+  color: var(--muzhi-text);
+  cursor: pointer;
+}
+
+.subtitle-timeline__export-actions button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+}
+
+.subtitle-timeline__export-popover > button {
+  justify-self: start;
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  background: var(--muzhi-panel-subtle);
+  color: var(--muzhi-text);
+  cursor: pointer;
+}
+
+.subtitle-timeline__export-popover > button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .session-drawer__overlay,
+  .session-drawer__panel,
+  .muzhi-btn {
+    transition-duration: 0.01ms;
+  }
+
+  /* Fluid tabs：reduced-motion 取消 indicator 位移 transition，立即落位；
+     selected/focus 状态本身不被关闭。 */
+  .muzhi-shell__tab-indicator {
+    transition: none;
+  }
+
+  .session-drawer__state-slot.is-running {
+    animation-duration: 1.6s;
+  }
+}
+
+.muzhi-shell__binding-header {
+  position: relative;
+  border-radius: 8px;
+  background: var(--muzhi-surface-subtle);
+}
+
+.muzhi-shell__binding-header::before {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: var(--muzhi-text-tertiary);
+  content: "";
+}
+
+.muzhi-shell__binding-header.is-connected::before {
+  color: var(--muzhi-success);
+  background: var(--muzhi-success);
+}
+.muzhi-shell__binding-header.is-stale {
+  border-color: var(--muzhi-warning);
+  background: var(--muzhi-warning-soft);
+}
+.muzhi-shell__binding-header.is-stale::before {
+  border-radius: 2px;
+  color: var(--muzhi-warning);
+  background: var(--muzhi-warning);
+  transform: rotate(45deg);
+}
+
+.muzhi-shell__toast {
+  position: fixed;
+  z-index: 90;
+  top: 64px;
+  right: 16px;
+  max-width: min(360px, calc(100vw - 32px));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid
+    color-mix(in srgb, var(--muzhi-success) 45%, var(--muzhi-border));
+  border-radius: 8px;
+  color: var(--muzhi-text-primary);
+  background: var(--muzhi-surface-1);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 18%);
+  font-size: 13px;
+}
+
+.muzhi-shell__toast span {
+  min-width: 0;
+  flex: 1;
+}
+.muzhi-shell__toast button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  color: var(--muzhi-text-secondary);
+  background: transparent;
+  cursor: pointer;
+}
+
+@container (max-width: 520px) {
+  .muzhi-shell__toast {
+    top: 56px;
+    right: 8px;
+    left: 8px;
+    max-width: none;
+  }
+}
+
+.subtitle-timeline__list li[aria-current="true"] time,
+.subtitle-timeline__list li[aria-current="true"] > div > span:first-child,
+.subtitle-timeline__list li > button:hover time,
+.subtitle-timeline__list li > button:focus-visible time {
+  color: var(--muzhi-accent-strong);
+  font-weight: 600;
+}
+.subtitle-timeline mark {
+  padding: 0 2px;
+  border-radius: 3px;
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+.subtitle-timeline__toolbar .muzhi-btn--icon {
+  font-size: 0;
+}
+
+/* Batch 侧栏与 Session 共用同一响应式规则：容器 ≥620px 时由
+   `.muzhi-app--with-sessions` 的 container query 转为常驻网格侧栏
+   （BatchDrawer 复用 .session-drawer__panel 类）；窄屏保持 Drawer。 */

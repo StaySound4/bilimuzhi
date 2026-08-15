@@ -1,0 +1,98 @@
+/* CompactActionMenu primitive（Ticket 05）：anchored command menu。 */
+
+.muzhi-compact-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.muzhi-compact-menu__trigger {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--muzhi-text-secondary);
+  background: transparent;
+  cursor: pointer;
+}
+
+.muzhi-compact-menu__trigger:hover {
+  background: var(--muzhi-surface-hover);
+}
+
+.muzhi-compact-menu__trigger:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+/* anchored layer：absolute 定位不入文档流，打开不改变 anchor row geometry。 */
+.muzhi-compact-menu__layer {
+  position: absolute;
+  z-index: 80;
+  top: calc(100% + 4px);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 168px;
+  max-width: min(220px, 60vw);
+  padding: 6px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  background: var(--muzhi-panel);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
+}
+
+.muzhi-compact-menu__layer.is-align-start {
+  right: auto;
+  left: 0;
+}
+
+.muzhi-compact-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--muzhi-text);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+}
+
+.muzhi-compact-menu__item svg {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+
+.muzhi-compact-menu__item:hover:not(:disabled),
+.muzhi-compact-menu__item:focus-visible {
+  background: var(--muzhi-surface-hover);
+  outline: none;
+}
+
+.muzhi-compact-menu__item.is-danger {
+  color: var(--muzhi-danger);
+}
+
+.muzhi-compact-menu__item.is-danger:hover:not(:disabled),
+.muzhi-compact-menu__item.is-danger:focus-visible {
+  background: var(--muzhi-danger-soft);
+}
+
+.muzhi-compact-menu__item:disabled {
+  color: var(--muzhi-text-tertiary);
+  cursor: default;
+}
+
+.muzhi-compact-menu__separator {
+  height: 1px;
+  margin: 6px 4px;
+  background: var(--muzhi-border);
+}

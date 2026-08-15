@@ -1,0 +1,1013 @@
+{
+  "schemaVersion": 1,
+  "document": "muzhi-ui-remediation-v1",
+  "description": "第二轮 UI/UX 修订视觉证据 machine-readable required-state matrix。来源：.workflow/specs/2026-08-11-muzhi-ui-remediation.md §7.3 最低状态矩阵与 D12 scenarios。",
+  "exceptions": {
+    "maxAgeDays": 90,
+    "file": "exceptions.json"
+  },
+  "surfaces": {
+    "shell": {
+      "activeTabs": [
+        "timeline",
+        "segments",
+        "summary",
+        "chat"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "batch-sidebar": {
+      "activeTabs": [
+        "batch"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "batch-workspace": {
+      "activeTabs": [
+        "batch"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "batch-selection": {
+      "activeTabs": [
+        "batch"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "batch-overlay": {
+      "activeTabs": [
+        "batch"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "timeline": {
+      "activeTabs": [
+        "timeline"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "timeline-export": {
+      "activeTabs": [
+        "timeline"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "segments": {
+      "activeTabs": [
+        "segments"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "summary": {
+      "activeTabs": [
+        "summary"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "chat": {
+      "activeTabs": [
+        "chat"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "session-menu": {
+      "activeTabs": [
+        "sessions"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "sessions": {
+      "activeTabs": [
+        "sessions"
+      ],
+      "pages": [
+        "sidepanel.html",
+        "qa-harness.html"
+      ]
+    },
+    "primitives": {
+      "activeTabs": [
+        "primitives"
+      ],
+      "pages": [
+        "qa-harness.html"
+      ]
+    },
+    "settings": {
+      "activeTabs": [
+        "settings"
+      ],
+      "pages": [
+        "settings.html",
+        "options.html",
+        "qa-harness.html"
+      ]
+    }
+  },
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "emptyStates": [
+    "empty",
+    "no-session-list"
+  ],
+  "states": [
+    "empty",
+    "populated",
+    "mixed",
+    "running",
+    "failed",
+    "partial-failure",
+    "completed",
+    "selected",
+    "current",
+    "search",
+    "long-text",
+    "mid-scroll",
+    "sync",
+    "export-closed",
+    "export-open",
+    "ad",
+    "long",
+    "clear-confirm",
+    "long-markdown",
+    "streaming",
+    "stopped",
+    "needs-reselection",
+    "language-locked",
+    "inspector-open",
+    "attachments",
+    "normal",
+    "pinned",
+    "unread",
+    "menu-open",
+    "danger",
+    "rename",
+    "multi-select",
+    "guide",
+    "job-overview",
+    "no-session-list",
+    "tabs-selected",
+    "quick-switch",
+    "reduced-motion",
+    "job-menu-open",
+    "row-menu-open",
+    "batch-overwrite-choice",
+    "batch-clear-job-confirm",
+    "batch-clear-selected-subtitles-confirm",
+    "batch-delete-selected-items-confirm",
+    "batch-export-options",
+    "batch-speech-strategy-choice",
+    "0-selected",
+    "2-selected",
+    "current-page-selected",
+    "all-filtered-selected"
+  ],
+  "minimumCounts": {
+    "batch-workspace:mixed": {
+      "batchItems": 20
+    },
+    "batch-workspace:running": {
+      "batchItems": 1
+    },
+    "batch-workspace:partial-failure": {
+      "batchItems": 5,
+      "failed": 1
+    },
+    "batch-workspace:completed": {
+      "batchItems": 1
+    },
+    "batch-workspace:selected": {
+      "batchItems": 1
+    },
+    "batch-selection:0-selected": {
+      "batchItems": 1
+    },
+    "batch-selection:2-selected": {
+      "batchItems": 2
+    },
+    "batch-selection:current-page-selected": {
+      "batchItems": 20
+    },
+    "batch-selection:all-filtered-selected": {
+      "batchItems": 20
+    },
+    "batch-selection:running": {
+      "batchItems": 1
+    },
+    "batch-overlay:batch-overwrite-choice": {
+      "batchItems": 1
+    },
+    "batch-overlay:batch-clear-job-confirm": {
+      "batchItems": 1
+    },
+    "batch-overlay:batch-clear-selected-subtitles-confirm": {
+      "batchItems": 1
+    },
+    "batch-overlay:batch-delete-selected-items-confirm": {
+      "batchItems": 1
+    },
+    "batch-overlay:batch-export-options": {
+      "batchItems": 1
+    },
+    "batch-overlay:batch-speech-strategy-choice": {
+      "batchItems": 1
+    },
+    "batch-overlay:job-menu-open": {
+      "batchItems": 1
+    },
+    "batch-overlay:row-menu-open": {
+      "batchItems": 1
+    },
+    "timeline:populated": {
+      "subtitleRows": 20
+    },
+    "timeline:current": {
+      "subtitleRows": 20
+    },
+    "timeline:search": {
+      "subtitleRows": 20
+    },
+    "timeline:long-text": {
+      "subtitleRows": 20
+    },
+    "timeline:mid-scroll": {
+      "subtitleRows": 20
+    },
+    "segments:populated": {
+      "segments": 6
+    },
+    "segments:ad": {
+      "segments": 6
+    },
+    "segments:long": {
+      "segments": 6
+    },
+    "segments:running": {
+      "segments": 1
+    },
+    "segments:clear-confirm": {
+      "segments": 1
+    },
+    "summary:populated": {
+      "paragraphs": 3
+    },
+    "summary:long-markdown": {
+      "paragraphs": 3
+    },
+    "summary:running": {
+      "paragraphs": 1
+    },
+    "chat:populated": {
+      "messages": 6
+    },
+    "chat:streaming": {
+      "messages": 6
+    },
+    "chat:failed": {
+      "messages": 1
+    },
+    "chat:needs-reselection": {
+      "messages": 1
+    },
+    "chat:language-locked": {
+      "messages": 1
+    },
+    "chat:inspector-open": {
+      "messages": 6
+    },
+    "chat:attachments": {
+      "messages": 6
+    },
+    "session-menu:normal": {
+      "sessions": 1
+    },
+    "session-menu:selected": {
+      "sessions": 1
+    },
+    "session-menu:running": {
+      "sessions": 1
+    },
+    "session-menu:pinned": {
+      "sessions": 1
+    },
+    "session-menu:open": {
+      "sessions": 1
+    },
+    "session-menu:danger": {
+      "sessions": 1
+    },
+    "batch-sidebar:job-overview": {
+      "jobs": 1
+    },
+    "shell:tabs-selected": {
+      "tabs": 4
+    },
+    "shell:quick-switch": {
+      "tabs": 4
+    },
+    "shell:reduced-motion": {
+      "tabs": 4
+    },
+    "segments:failed": {
+      "segments": 1
+    }
+  },
+  "profiles": {
+    "01": {
+      "required": []
+    },
+    "03": {
+      "required": []
+    },
+    "04": {
+      "required": []
+    },
+    "05": {
+      "required": []
+    },
+    "06": {
+      "required": []
+    },
+    "07": {
+      "required": []
+    },
+    "08": {
+      "required": []
+    },
+    "09": {
+      "required": []
+    },
+    "10": {
+      "required": []
+    },
+    "11": {
+      "required": []
+    },
+    "12": {
+      "required": []
+    },
+    "13": {
+      "required": [
+        {
+          "surface": "shell",
+          "state": "tabs-selected",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "shell",
+          "state": "quick-switch",
+          "themes": [
+            "light"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "shell",
+          "state": "reduced-motion",
+          "themes": [
+            "light"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-sidebar",
+          "state": "job-overview",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-workspace",
+          "state": "empty",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            360,
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-workspace",
+          "state": "mixed",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            360,
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-workspace",
+          "state": "running",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            360,
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-workspace",
+          "state": "partial-failure",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            360,
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-workspace",
+          "state": "completed",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            360,
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-selection",
+          "state": "0-selected",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-selection",
+          "state": "2-selected",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-selection",
+          "state": "current-page-selected",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-selection",
+          "state": "all-filtered-selected",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-selection",
+          "state": "running",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-overlay",
+          "state": "job-menu-open",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-overlay",
+          "state": "batch-overwrite-choice",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-overlay",
+          "state": "batch-clear-job-confirm",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-overlay",
+          "state": "batch-clear-selected-subtitles-confirm",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-overlay",
+          "state": "batch-delete-selected-items-confirm",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-overlay",
+          "state": "batch-export-options",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "batch-overlay",
+          "state": "batch-speech-strategy-choice",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "timeline",
+          "state": "populated",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "timeline",
+          "state": "current",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "timeline",
+          "state": "search",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "timeline",
+          "state": "long-text",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "timeline",
+          "state": "mid-scroll",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "timeline-export",
+          "state": "export-closed",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "timeline-export",
+          "state": "export-open",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "segments",
+          "state": "populated",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "segments",
+          "state": "ad",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "segments",
+          "state": "long",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "segments",
+          "state": "running",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "segments",
+          "state": "failed",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "segments",
+          "state": "clear-confirm",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "summary",
+          "state": "populated",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "summary",
+          "state": "long-markdown",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "summary",
+          "state": "running",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "chat",
+          "state": "populated",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "chat",
+          "state": "streaming",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "chat",
+          "state": "failed",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "chat",
+          "state": "needs-reselection",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "chat",
+          "state": "language-locked",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "chat",
+          "state": "inspector-open",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "chat",
+          "state": "attachments",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            760,
+            1158
+          ]
+        },
+        {
+          "surface": "session-menu",
+          "state": "normal",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "session-menu",
+          "state": "selected",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "session-menu",
+          "state": "running",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "session-menu",
+          "state": "pinned",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "session-menu",
+          "state": "menu-open",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        },
+        {
+          "surface": "session-menu",
+          "state": "danger",
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "widths": [
+            520,
+            1158
+          ]
+        }
+      ]
+    }
+  }
+}

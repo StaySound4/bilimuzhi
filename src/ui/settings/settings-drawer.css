@@ -1,0 +1,1065 @@
+.muzhi-settings-layer {
+  position: fixed;
+  z-index: 90;
+  inset: 0;
+  display: grid;
+  place-items: stretch end;
+}
+
+.muzhi-settings-layer__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgb(5 10 18 / 52%);
+  backdrop-filter: blur(2px);
+}
+
+.muzhi-settings {
+  position: relative;
+  /*
+   * A column flexbox, not a fixed grid track list: the drawer renders an
+   * optional feedback banner between the tabs and the panel, and a positional
+   * `grid-template-rows` silently handed that banner the panel's 1fr track
+   * while pushing the panel into an overlapping implicit row.
+   */
+  display: flex;
+  flex-direction: column;
+  width: min(92vw, 680px);
+  height: 100%;
+  overflow: hidden;
+  border-left: 1px solid var(--muzhi-border);
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  box-shadow: -16px 0 42px rgb(0 0 0 / 26%);
+}
+
+.muzhi-settings header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--muzhi-border);
+}
+
+.muzhi-settings header h2,
+.muzhi-settings__key h3,
+.muzhi-settings__key p {
+  margin: 0;
+}
+
+.muzhi-settings__tabs {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--muzhi-border);
+  background: var(--muzhi-panel-subtle);
+  scrollbar-width: thin;
+}
+
+.muzhi-settings button,
+.muzhi-settings input,
+.muzhi-settings select,
+.muzhi-settings textarea {
+  min-height: 38px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  font: inherit;
+}
+
+.muzhi-settings button {
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.muzhi-settings button:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-settings__tabs button {
+  flex: 0 0 auto;
+  min-height: 34px;
+  border-color: transparent;
+  color: var(--muzhi-muted);
+  background: transparent;
+}
+
+.muzhi-settings__tabs button[aria-selected="true"] {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-settings input,
+.muzhi-settings select,
+.muzhi-settings textarea {
+  width: 100%;
+  padding: 7px 10px;
+}
+
+.muzhi-settings input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-grid;
+  place-content: center;
+  flex: 0 0 18px;
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 5px;
+  background: var(--muzhi-panel);
+  cursor: pointer;
+}
+
+.muzhi-settings input[type="checkbox"]::before {
+  width: 8px;
+  height: 4px;
+  border-color: var(--muzhi-panel);
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+  content: "";
+  transform: translateY(-1px) rotate(-45deg) scale(0);
+  transform-origin: center;
+  transition: transform 100ms ease;
+}
+
+.muzhi-settings input[type="checkbox"]:hover:not(:disabled) {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-settings input[type="checkbox"]:checked {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-accent);
+}
+
+.muzhi-settings input[type="checkbox"]:checked::before {
+  transform: translateY(-1px) rotate(-45deg) scale(1);
+}
+
+.muzhi-settings input[type="checkbox"]:checked:hover:not(:disabled) {
+  background: var(--muzhi-accent-strong);
+}
+
+.muzhi-settings input[type="checkbox"]:disabled {
+  border-color: var(--muzhi-border);
+  background: var(--muzhi-panel-subtle);
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.muzhi-settings input[type="checkbox"]:checked:disabled {
+  background: color-mix(in srgb, var(--muzhi-accent) 55%, var(--muzhi-panel));
+}
+
+.muzhi-settings input:disabled,
+.muzhi-settings select:disabled,
+.muzhi-settings button:disabled {
+  color: var(--muzhi-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.muzhi-settings textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.muzhi-settings button:focus-visible,
+.muzhi-settings input:focus-visible,
+.muzhi-settings select:focus-visible,
+.muzhi-settings textarea:focus-visible,
+.muzhi-settings a:focus-visible,
+.muzhi-settings-layer__backdrop:focus-visible {
+  outline: 3px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-settings input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-settings__panel {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 22px;
+  overflow-y: auto;
+}
+
+.muzhi-settings header,
+.muzhi-settings__tabs,
+.muzhi-settings__feedback {
+  flex: 0 0 auto;
+}
+
+.muzhi-settings__panel > label,
+.muzhi-settings__key {
+  display: grid;
+  max-width: 520px;
+  gap: 12px;
+}
+
+.muzhi-settings__key label,
+.muzhi-settings__panel > label {
+  display: grid;
+  gap: 6px;
+  color: var(--muzhi-muted);
+  font-size: 0.88rem;
+}
+
+.muzhi-settings__key p[role="status"] {
+  padding: 9px 11px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-muted);
+  background: var(--muzhi-panel-subtle);
+  font-size: 0.86rem;
+}
+
+.muzhi-settings__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.muzhi-settings__actions button:first-child {
+  border-color: var(--muzhi-accent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-settings__hint {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.muzhi-settings__external-link {
+  width: fit-content;
+  color: var(--muzhi-accent-strong);
+}
+
+@media (max-width: 620px) {
+  .muzhi-settings {
+    width: 100%;
+  }
+
+  .muzhi-settings__panel {
+    padding: 16px;
+  }
+}
+
+.muzhi-settings__task {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-settings__feedback {
+  margin: 0 16px 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.muzhi-settings__feedback.is-status {
+  border-color: color-mix(in srgb, var(--muzhi-success) 45%, transparent);
+  color: var(--muzhi-success);
+  background: var(--muzhi-success-soft);
+}
+
+.muzhi-settings__feedback.is-pending {
+  border-color: color-mix(in srgb, var(--muzhi-accent) 45%, transparent);
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-settings__feedback.is-error {
+  border-color: color-mix(in srgb, var(--muzhi-danger) 45%, transparent);
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+}
+
+.muzhi-settings__steps {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 4px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Consecutive setting groups inside one section need a visible separation. */
+.muzhi-settings__key + .muzhi-settings__key {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--muzhi-border);
+}
+
+.muzhi-settings__key h3 {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--muzhi-text);
+}
+
+.muzhi-settings__prompt-presets {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.muzhi-settings__prompt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.muzhi-settings label:has(> input[type="checkbox"]) {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  line-height: 1.4;
+}
+
+.muzhi-settings__backup,
+.muzhi-settings__task-configurations {
+  display: grid;
+  max-width: 520px;
+  gap: 12px;
+}
+
+.muzhi-settings__backup-heading h3,
+.muzhi-settings__backup-heading p,
+.muzhi-settings__backup-result p {
+  margin: 0;
+}
+
+.muzhi-settings__backup-heading h3 {
+  color: var(--muzhi-text);
+  font-size: 14px;
+}
+
+.muzhi-settings__backup-heading p {
+  margin-top: 3px;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.muzhi-settings__backup-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.muzhi-settings .muzhi-settings__backup-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 3px 9px;
+  align-items: center;
+  min-height: 58px;
+  padding: 9px 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  color: var(--muzhi-text);
+  text-align: left;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-settings .muzhi-settings__backup-card:hover:not(:disabled) {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-accent) 45%,
+    var(--muzhi-border)
+  );
+}
+
+.muzhi-settings .muzhi-settings__backup-card.is-selected {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-accent-soft);
+  box-shadow: inset 3px 0 0 var(--muzhi-accent);
+}
+
+.muzhi-settings__backup-card-icon {
+  grid-row: 1 / span 2;
+  width: 22px;
+  height: 22px;
+  color: var(--muzhi-accent-strong);
+}
+
+.muzhi-settings__backup-card-state {
+  color: var(--muzhi-muted);
+  font-size: 11px;
+}
+
+.muzhi-settings__backup-import-file {
+  display: grid;
+  gap: 6px;
+  color: var(--muzhi-muted);
+  font-size: 0.88rem;
+}
+
+.muzhi-settings__backup-import-file input[type="file"] {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-settings__backup-result {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid
+    color-mix(in srgb, var(--muzhi-accent) 35%, var(--muzhi-border));
+  border-radius: 11px;
+  background: var(--muzhi-accent-soft);
+}
+
+.muzhi-settings__backup-result p {
+  overflow-wrap: anywhere;
+  color: var(--muzhi-text);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.muzhi-settings__backup-result > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.muzhi-settings__task-configurations fieldset {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  gap: 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-settings__task-configurations legend {
+  padding: 0 6px;
+  color: var(--muzhi-text);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.muzhi-settings__task-configurations label {
+  display: grid;
+  gap: 6px;
+  color: var(--muzhi-muted);
+  font-size: 0.88rem;
+}
+
+.muzhi-settings__task-configurations p {
+  margin: 0;
+}
+
+.muzhi-settings__secret-field {
+  position: relative;
+  display: grid;
+}
+
+.muzhi-settings__secret-field > input {
+  padding-right: 46px;
+}
+
+.muzhi-settings__secret-toggle {
+  position: absolute;
+  top: 50%;
+  right: 3px;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  min-width: 34px;
+  min-height: 34px !important;
+  padding: 0 !important;
+  border-color: transparent !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  transform: translateY(-50%);
+}
+
+.muzhi-settings__secret-toggle:hover:not(:disabled) {
+  color: var(--muzhi-accent-strong);
+  background: var(--muzhi-accent-soft) !important;
+}
+
+.muzhi-settings__key-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.muzhi-settings .muzhi-settings__key-delete {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  min-width: 38px;
+  padding: 0;
+}
+
+.muzhi-settings__confirmation-layer {
+  position: absolute;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.muzhi-settings .muzhi-settings__confirmation-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: rgb(5 10 18 / 58%);
+}
+
+.muzhi-settings .muzhi-settings__confirmation-backdrop:hover:not(:disabled) {
+  border: 0;
+  background: rgb(5 10 18 / 62%);
+}
+
+.muzhi-settings__confirmation {
+  position: relative;
+  display: grid;
+  width: min(100%, 420px);
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  box-shadow: 0 20px 52px rgb(0 0 0 / 32%);
+}
+
+.muzhi-settings__confirmation h3,
+.muzhi-settings__confirmation p {
+  margin: 0;
+}
+
+.muzhi-settings__confirmation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.muzhi-settings__new-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.muzhi-settings__new-profile button {
+  width: 100%;
+}
+
+.muzhi-settings__profile-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 11px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-settings__profile-card[draggable="true"] {
+  cursor: grab;
+}
+
+.muzhi-settings__profile-card-main {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+  padding: 0;
+  border: 0 !important;
+  color: var(--muzhi-text);
+  text-align: left;
+  background: transparent !important;
+}
+
+.muzhi-settings__profile-card-name {
+  overflow: hidden;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-settings__profile-card-status {
+  overflow: hidden;
+  color: var(--muzhi-muted);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-settings__profile-order-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.muzhi-settings__profile-order-actions button {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0;
+}
+
+.muzhi-settings__editor {
+  max-height: min(88vh, 560px);
+  overflow-y: auto;
+}
+
+.muzhi-settings__editor label {
+  display: grid;
+  gap: 6px;
+  color: var(--muzhi-muted);
+  font-size: 0.88rem;
+}
+
+.muzhi-settings__editor p[role="alert"] {
+  margin: 0;
+  padding: 9px 11px;
+  border: 1px solid color-mix(in srgb, var(--muzhi-danger) 45%, transparent);
+  border-radius: 9px;
+  color: var(--muzhi-danger);
+  background: var(--muzhi-danger-soft);
+  font-size: 0.86rem;
+}
+
+.muzhi-settings__profiles,
+.muzhi-settings__profile-detail,
+.muzhi-settings__models {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+/* Provider 卡片与模型卡片等宽对称：消除 ol 默认缩进与列表标记，
+   使卡片左右两端与详情卡片对齐。 */
+.muzhi-settings__profile-list,
+.muzhi-settings__model-list {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 模型卡片与上方「手工模型 ID」输入框/「手工添加模型」按钮等宽并居中：
+   保持在详情区内边距内，随侧栏宽度自适应，不拉伸到详情卡片左右边框。 */
+.muzhi-settings__model-list {
+  width: 100%;
+}
+
+.muzhi-settings__profiles,
+.muzhi-settings__models {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.muzhi-settings__profile-detail {
+  padding: 14px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel-subtle);
+}
+
+.muzhi-settings__profile-base-url {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--muzhi-muted);
+  font-size: 0.86rem;
+}
+
+.muzhi-settings__profile-permission {
+  min-width: 0;
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  color: var(--muzhi-muted);
+  background: var(--muzhi-panel);
+  font-size: 0.84rem;
+}
+
+.muzhi-settings__probe-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.muzhi-settings__profile-detail > label {
+  display: grid;
+  gap: 6px;
+  color: var(--muzhi-muted);
+  font-size: 0.88rem;
+}
+
+.muzhi-settings__model-card {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 12px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-settings__model-card[draggable="true"] {
+  cursor: grab;
+}
+
+.muzhi-settings__model-card.is-dragging {
+  border-color: var(--muzhi-accent);
+  background: var(--muzhi-accent-soft);
+  cursor: grabbing;
+  opacity: 0.72;
+}
+
+/* 头部行：拖拽手柄 + 模型标题 + 行菜单。 */
+.muzhi-settings__model-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.muzhi-settings__drag-handle {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  color: var(--muzhi-muted);
+}
+
+.muzhi-settings__model-title {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 10px;
+  min-width: 0;
+}
+
+.muzhi-settings__model-title strong {
+  font-size: 0.92rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.muzhi-settings__model-title code {
+  overflow-wrap: anywhere;
+  color: var(--muzhi-muted);
+  font-size: 0.76rem;
+}
+
+.muzhi-settings__model-title small {
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.muzhi-settings__model-title small.is-verified {
+  color: var(--muzhi-success, #1e7e34);
+  background: var(--muzhi-success-soft, rgba(30, 126, 52, 0.12));
+}
+
+.muzhi-settings__model-title small.is-unverified {
+  color: var(--muzhi-warning, #9a6700);
+  background: var(--muzhi-warning-soft, rgba(154, 103, 0, 0.12));
+}
+
+/* 控件行：启用/思考开关 + 档位选择，与标题左对齐。 */
+.muzhi-settings__model-card-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  padding-left: 30px;
+  min-width: 0;
+}
+
+.muzhi-settings__model-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  color: var(--muzhi-text);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.muzhi-settings__model-switch input {
+  accent-color: var(--muzhi-accent, #2563eb);
+}
+
+.muzhi-settings__model-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.muzhi-settings__model-select > span {
+  color: var(--muzhi-muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.muzhi-settings__model-select select {
+  max-width: 180px;
+}
+
+.muzhi-settings__model-select select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.muzhi-settings__model-hint {
+  flex-basis: 100%;
+  margin: -2px 0 0 30px;
+  color: var(--muzhi-muted);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+.muzhi-settings__reasoning-hint {
+  margin: 0;
+  color: var(--muzhi-muted);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+/* 自定义档位管理区（模型列表下方）。 */
+.muzhi-settings__custom-efforts {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 11px;
+  background: var(--muzhi-panel);
+}
+
+.muzhi-settings__custom-efforts h4 {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.muzhi-settings__custom-efforts-add {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.muzhi-settings__custom-efforts-add label {
+  flex: 1;
+  min-width: 0;
+}
+
+.muzhi-settings__custom-efforts-add input {
+  width: 100%;
+}
+
+.muzhi-settings__custom-efforts-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.muzhi-settings__custom-efforts-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 9px;
+  background: var(--muzhi-canvas);
+}
+
+.muzhi-settings__custom-efforts-list code {
+  overflow-wrap: anywhere;
+}
+
+.muzhi-settings__form-error {
+  margin: 0;
+  color: var(--muzhi-danger, #c0392b);
+  font-size: 0.8rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.muzhi-settings__model-order-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.muzhi-settings__model-order-actions button {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0;
+}
+
+.muzhi-settings__danger {
+  border-color: color-mix(
+    in srgb,
+    var(--muzhi-danger) 55%,
+    var(--muzhi-border)
+  ) !important;
+  color: var(--muzhi-danger) !important;
+}
+
+.muzhi-settings__danger:hover:not(:disabled) {
+  border-color: var(--muzhi-danger) !important;
+  background: var(--muzhi-danger-soft) !important;
+}
+
+@media (max-width: 620px) {
+  .muzhi-settings__backup-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .muzhi-settings__new-profile {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .muzhi-settings__model-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .muzhi-settings__model-order-actions {
+    grid-column: 2;
+    justify-content: flex-end;
+  }
+
+  .muzhi-settings__profile-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .muzhi-settings__profile-order-actions {
+    justify-content: flex-end;
+  }
+}
+
+/* Ticket 13：宽屏 master-detail；行级编辑/删除/排序收进单一 overflow。 */
+.muzhi-settings__profiles {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(320px, 1.4fr);
+  align-items: start;
+  gap: 16px;
+}
+.muzhi-settings__new-profile {
+  grid-column: 1;
+}
+.muzhi-settings__profile-list {
+  grid-column: 1;
+}
+.muzhi-settings__profile-detail {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+.muzhi-settings__row-menu {
+  position: relative;
+  flex: 0 0 auto;
+}
+.muzhi-settings__row-menu > summary {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  min-height: 34px;
+  border-radius: 7px;
+  color: var(--muzhi-text-secondary);
+  cursor: pointer;
+  list-style: none;
+  font-size: 20px;
+}
+.muzhi-settings__row-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.muzhi-settings__row-menu[open] > summary {
+  background: var(--muzhi-surface-selected);
+  color: var(--muzhi-accent-strong);
+}
+.muzhi-settings__row-menu > .muzhi-settings__profile-order-actions,
+.muzhi-settings__row-menu > .muzhi-settings__model-order-actions {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 34px);
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid var(--muzhi-border-strong);
+  border-radius: 8px;
+  background: var(--muzhi-surface-1);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 20%);
+}
+.muzhi-settings__backup-cards {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+@media (max-width: 620px) {
+  .muzhi-settings__profiles {
+    display: flex;
+    flex-direction: column;
+  }
+  .muzhi-settings__profile-list,
+  .muzhi-settings__profile-detail {
+    width: 100%;
+  }
+  .muzhi-settings__backup-cards {
+    grid-template-columns: 1fr;
+  }
+}

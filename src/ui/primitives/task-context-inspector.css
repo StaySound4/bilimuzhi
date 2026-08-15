@@ -1,0 +1,50 @@
+.muzhi-task-context {
+  display: grid;
+  min-width: 0;
+}
+
+.muzhi-task-context__strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 10px;
+  background: var(--muzhi-surface-2);
+}
+
+.muzhi-task-context__summary {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--muzhi-muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.muzhi-task-context__trigger {
+  flex: 0 0 auto;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--muzhi-border);
+  border-radius: 8px;
+  color: var(--muzhi-text);
+  background: var(--muzhi-panel);
+  cursor: pointer;
+}
+
+.muzhi-task-context__trigger:focus-visible {
+  outline: 2px solid var(--muzhi-focus);
+  outline-offset: 2px;
+}
+
+.muzhi-task-context__inspector {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--muzhi-border);
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  background: var(--muzhi-panel);
+}

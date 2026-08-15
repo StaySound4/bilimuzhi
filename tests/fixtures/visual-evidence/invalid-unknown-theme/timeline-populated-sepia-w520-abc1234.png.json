@@ -1,0 +1,28 @@
+{
+  "file": "timeline-populated-sepia-w520-abc1234.png",
+  "sha256": "db7365720f2ddb998a5be451cd81e52d8d9c398defba13c50f900dd6908a8485",
+  "commit": "abc1234",
+  "surface": "timeline",
+  "state": "populated",
+  "theme": "sepia",
+  "viewport": "520x900",
+  "deviceScaleFactor": 1,
+  "scenarioId": "timeline-populated-20",
+  "activeTab": "timeline",
+  "interactionStep": 0,
+  "themeAttribute": {
+    "name": "data-theme",
+    "value": "sepia"
+  },
+  "computedStyles": {
+    "canvas": "#f6f8fb",
+    "background": "#ffffff",
+    "text": "#172033",
+    "accent": "#1769e8"
+  },
+  "scenarioCounts": {
+    "subtitleRows": 20
+  },
+  "url": "chrome-extension://abcdefghijklmnopqrstuvwxyzabcdef/sidepanel.html?scenario=timeline-populated-20",
+  "capturedAt": "2026-08-11T10:00:00.000Z"
+}

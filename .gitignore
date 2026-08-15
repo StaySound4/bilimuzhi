@@ -1,0 +1,32 @@
+# 依赖与构建
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+.cache/
+test-results/
+test-results-*/
+playwright-report/
+release/
+*.log
+*.zip
+*.crx
+*.map
+
+# 敏感与凭据
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+*cookie*.json
+
+# 编辑器与系统噪声
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

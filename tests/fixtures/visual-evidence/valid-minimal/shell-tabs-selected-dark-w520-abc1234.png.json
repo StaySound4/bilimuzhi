@@ -1,0 +1,28 @@
+{
+  "file": "shell-tabs-selected-dark-w520-abc1234.png",
+  "sha256": "550d33b2483afb839ec2d0079dc0428654c62f90dbefa0fe8cb8a8327f4e2a85",
+  "commit": "abc1234",
+  "surface": "shell",
+  "state": "tabs-selected",
+  "theme": "dark",
+  "viewport": "520x900",
+  "deviceScaleFactor": 1,
+  "scenarioId": "shell-tabs-selected",
+  "activeTab": "timeline",
+  "interactionStep": 0,
+  "themeAttribute": {
+    "name": "data-theme",
+    "value": "dark"
+  },
+  "computedStyles": {
+    "canvas": "#0f1722",
+    "background": "#151f2d",
+    "text": "#edf3ff",
+    "accent": "#1769e8"
+  },
+  "scenarioCounts": {
+    "tabs": 4
+  },
+  "url": "chrome-extension://abcdefghijklmnopqrstuvwxyzabcdef/sidepanel.html?scenario=shell-tabs-selected",
+  "capturedAt": "2026-08-11T10:00:00.000Z"
+}

@@ -1,0 +1,28 @@
+{
+  "file": "batch-workspace-mixed-light-w360-abc1234.png",
+  "sha256": "68f756000cb701dddc7d8b2e755c99c9fe3bbda7ada01bb63e9d3a6e74989e5a",
+  "commit": "abc1234",
+  "surface": "batch-workspace",
+  "state": "mixed",
+  "theme": "light",
+  "viewport": "360x900",
+  "deviceScaleFactor": 1,
+  "scenarioId": "batch-mixed-20",
+  "activeTab": "batch",
+  "interactionStep": 0,
+  "themeAttribute": {
+    "name": "data-theme",
+    "value": "light"
+  },
+  "computedStyles": {
+    "canvas": "#f6f8fb",
+    "background": "#ffffff",
+    "text": "#172033",
+    "accent": "#1769e8"
+  },
+  "scenarioCounts": {
+    "batchItems": 20
+  },
+  "url": "chrome-extension://abcdefghijklmnopqrstuvwxyzabcdef/sidepanel.html?scenario=batch-mixed-20",
+  "capturedAt": "2026-08-11T10:00:00.000Z"
+}
