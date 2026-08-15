@@ -601,7 +601,7 @@ export function AiChatShell({
               <a
                 aria-label={t(uiLanguage ?? "zh-Hans", "header.githubAria")}
                 class="muzhi-shell__github"
-                href="https://github.com/StaySound4/muzhi"
+                href="https://github.com/StaySound4/bilimuzhi"
                 rel="noreferrer"
                 target="_blank"
                 title={t(uiLanguage ?? "zh-Hans", "header.githubAria")}
